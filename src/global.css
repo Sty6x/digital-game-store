@@ -125,6 +125,15 @@ table {
 	border-spacing: 0;
 }
 
+body {
+	height: 100vh;
+	width: 100vw;
+}
+#root{
+	height: 100%;
+	width: 100%;
+}
+
 a:visited {
 	text-decoration: none;
 }
@@ -143,6 +152,6 @@ li {
 .links > a:visited {
 	color: white;
 }
-.logo > a:visited{
-color: white;
+.logo > a:visited {
+	color: white;
 }

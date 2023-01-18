@@ -1,9 +1,9 @@
-import './HomePage.css';
-
+import homeStyles from './HomePage.module.css';
+import HomeMain from '../components/HomePage/HomeMain';
 function HomePage() {
   return (
-    <div className="HomePage">
-      HomePage
+    <div className={`hpContainer ${homeStyles.size} ${homeStyles.display}`}>
+      <HomeMain/>
     </div>
   );
 }

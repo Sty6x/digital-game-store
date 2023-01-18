@@ -15,7 +15,7 @@ const NavBar = () => {
 		);
 	});
 	return (
-		<div className={`nav-container ${navStyles.navContDisplay}`}>
+		<div className={`nav-container ${navStyles.size} ${navStyles.navContDisplay}`}>
 			<h1 className={`logo ${navStyles.logoFont}`}><Link to={'/'}>GAME DEALS</Link></h1>
 			<ul className={`nav-links ${navStyles.linksGap} ${navStyles.linksMargin} ${navStyles.linksFont} ${navStyles.linksDisplay}`}>{DISPLAY_LINKS}</ul>
 		</div>

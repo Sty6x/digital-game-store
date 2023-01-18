@@ -1,0 +1,28 @@
+.linksGap {
+	gap: 2em;
+}
+.linksMargin {
+    margin-left: 4em;
+    /* margin-right: min(10px, 2em); */
+}
+
+.linksDisplay {
+	display: flex;
+}
+.linksFont{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.navContDisplay {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: red;
+	padding: 3em 5em 3em 5em;
+}
+.logoFont {
+	font-size: 4rem;
+	font-weight: bold;
+	color: white;
+}

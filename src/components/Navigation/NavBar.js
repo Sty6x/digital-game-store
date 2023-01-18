@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import navStyles from "./Navigation.module.css";
 const NavBar = () => {
-	const pageLinks = [{path:"", url:"Home" },{path:"shop", url:"Shop"},{path:"checkout",url:"Checkout"}];
-	const displayLinks = pageLinks.map((pageLink) => {
+	const pageLinks = [
+		{ path: "", url: "Home" },
+		{ path: "shop", url: "Shop" },
+		{ path: "checkout", url: "Checkout" },
+	];
+	const DISPLAY_LINKS = pageLinks.map((pageLink) => {
 		return (
 			<li className="links" key={pageLink.url}>
 				<Link to={`/${pageLink.path}`}>{pageLink.url}</Link>{" "}
@@ -11,11 +15,10 @@ const NavBar = () => {
 		);
 	});
 	return (
-		<>
-			<ul className="nav-links">
-				{displayLinks}
-			</ul>
-		</>
+		<div className={`nav-container ${navStyles.navContDisplay}`}>
+			<h1 className={`logo ${navStyles.logoFont}`}><Link to={'/'}>GAME DEALS</Link></h1>
+			<ul className={`nav-links ${navStyles.linksGap} ${navStyles.linksMargin} ${navStyles.linksFont} ${navStyles.linksDisplay}`}>{DISPLAY_LINKS}</ul>
+		</div>
 	);
 };
 

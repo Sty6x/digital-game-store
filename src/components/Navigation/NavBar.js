@@ -5,7 +5,7 @@ const NavBar = () => {
 	const pageLinks = [{path:"", url:"Home" },{path:"shop", url:"Shop"},{path:"checkout",url:"Checkout"}];
 	const displayLinks = pageLinks.map((pageLink) => {
 		return (
-			<li className="links">
+			<li className="links" key={pageLink.url}>
 				<Link to={`/${pageLink.path}`}>{pageLink.url}</Link>{" "}
 			</li>
 		);

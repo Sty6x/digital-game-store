@@ -1,7 +1,7 @@
-# warframe-market
-A Warframe market clone using Client side Routing from React Routers and warframe market API to fetch their websites data so i don't have to use any assets
+# digital-game-store
+A digital game store using Client side Routing from React Routers and Cheap Shark API to fetch their websites data so i don't have to use any assets
 
 The Purpose of this project is just for me to get more familiar with React Routers and using the useEffect hook to fetch data for a component.
 
 ## API:
-  Warframe Market's API Doc: https://warframe.market/api_docs
+  Cheap Shark's API Doc: https://apidocs.cheapshark.com/#a2620d3f-683e-0396-61e7-3fe4d30ea376

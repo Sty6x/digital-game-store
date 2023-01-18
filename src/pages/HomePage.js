@@ -1,4 +1,4 @@
-import homeStyles from './HomePage.module.css';
+import homeStyles from '../components/HomePage/HomePage.module.css';
 import HomeMain from '../components/HomePage/HomeMain';
 function HomePage() {
   return (

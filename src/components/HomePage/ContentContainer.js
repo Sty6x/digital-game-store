@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import contentStyles from "./Content.module.css";
+import HomeContentCard from "./HomeContentCard";
 
 const ContentContainer = () => {
 	const [gameList, setGameList] = useState([]);
@@ -50,11 +51,14 @@ const ContentContainer = () => {
 	}
 
 	const DISPLAY_GAME_LIST = sortedGameList.map((game) => {
-		return <li key={game.steamAppID}> {game.title}</li>;
+		return (
+				<HomeContentCard key={game.steamAppID} gameData={game} />
+		);
 	});
 	return (
-		<div className={`${contentStyles.gridContainer}`}>{subLoad ? <>LOADING CONTENTS...</> : DISPLAY_GAME_LIST}</div>
-
+		<div className={`${contentStyles.gridContainer}`}>
+			{subLoad ? <>LOADING CONTENTS...</> : DISPLAY_GAME_LIST}
+		</div>
 	);
 };
 export default ContentContainer;

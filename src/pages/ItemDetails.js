@@ -16,7 +16,9 @@ const ItemDetails = () => {
 			`https://api.giphy.com/v1/gifs/search?api_key=6C6Bv7RmIvF06uPUz6RVMaQgiWxSQiKd&q=${fetchedGametitle}-game&limit=1&offset=0&rating=pg-13&lang=en`
 		);
 		const fetchedGif = await fetchGiphyApi.json();
-		const gifURL = fetchedGif.data[0].url;
+		const gifURL = fetchedGif.data[0].images.original.url;
+        console.log(gifURL)
+        console.log(fetchedGif)
 
 		setGameTitle({ ...fetchedGame, gifUrl: gifURL });
 

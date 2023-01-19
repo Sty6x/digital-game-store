@@ -1,11 +1,11 @@
 import React from "react";
 import "./ItemCSS/itemDisplay.css";
 
-const ItemDisplay = () => {
+const ItemDisplay = ({gameDetails}) => {
 	return (
 		<div className="item-display-container">
 			<div className="item-display-img-container">
-				<img src="" alt="game-image" />
+				<img src={gameDetails.gifUrl} alt="game-image" />
 			</div>
 			<div className="item-display-contents">
 				<div className="item-title-container">

@@ -171,7 +171,6 @@ li {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-
 }
 .home-card-title-score-ratings {
 	margin-left: auto;
@@ -184,4 +183,9 @@ li {
 }
 p {
 	text-align: center;
+}
+
+.home-card-logo{
+	width: 50px;
+	height: 50px;
 }

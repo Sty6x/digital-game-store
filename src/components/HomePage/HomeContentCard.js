@@ -4,6 +4,10 @@ const HomeContentCard = ({ gameData }) => {
 	return (
 		<li id={`${gameData.internalName}-list`} className={`${contentCardStyles.cardList}`}>
 			<div id="home-card-container" className={`${contentCardStyles.homeCardContainer}`}>
+				<div className={`${contentCardStyles.saleCard}`}>
+					<p>{Math.floor(gameData.savings)}% Off</p>
+
+				</div>
 				<div className={`${contentCardStyles.homeCardImageContainer}`} id="home-card-image-cont">
 					<img src={gameData.thumb} className={`${contentCardStyles.homeCardImage}`} />
 				</div>

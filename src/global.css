@@ -167,3 +167,7 @@ li {
 .home-card-contents {
 	flex: 1;
 }
+
+p{
+	text-align: center;
+}

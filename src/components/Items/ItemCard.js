@@ -1,23 +1,30 @@
 import React, { useEffect } from "react";
-import contentCardStyles from "./ContentCard.module.css";
+import cardStyles from "./itemCard.module.css";
 import steamLogo from "../../assets/img/steam-icon.png";
 import metacriticLogo from "../../assets/img/metacritic-logo.png";
 
-const HomeContentCard = ({ gameData }) => {
+const ItemCard = ({ gameData }) => {
 	return (
 		<li
 			id={`${gameData.internalName}-list`}
-			className={`home-card-list ${contentCardStyles.cardList}`}
+			className={`home-card-list ${cardStyles
+			.cardList}`}
 		>
-			<div id="home-card-container" className={`${contentCardStyles.homeCardContainer}`}>
-				<div className={`${contentCardStyles.saleCard}`}>
+			<div id="home-card-container" className={`${cardStyles
+			.homeCardContainer}`}>
+				<div className={`${cardStyles
+				.saleCard}`}>
 					<p>{Math.floor(gameData.savings)}% Off</p>
 				</div>
-				<div className={`${contentCardStyles.homeCardImageContainer}`} id="home-card-image-cont">
-					<img src={gameData.thumb} className={`${contentCardStyles.homeCardImage}`} />
+				<div className={`${cardStyles
+				.homeCardImageContainer}`} id="home-card-image-cont">
+					<img src={gameData.thumb} className={`${cardStyles
+					.homeCardImage}`} />
 				</div>
-				<div id="home-card-textNprice-container" className={`${contentCardStyles.textNpriceDisplay}`}>
-					<div id="home-card-textNtitle" className={`home-card-contents ${contentCardStyles.style}`}>
+				<div id="home-card-textNprice-container" className={`${cardStyles
+				.textNpriceDisplay}`}>
+					<div id="home-card-textNtitle" className={`home-card-contents ${cardStyles
+					.style}`}>
 						<div className="home-cards" id="home-card-title">
 							<h3>{gameData.title}</h3>
 							<h4 className="home-card-title-score-ratings home-card-prices">${gameData.salePrice}</h4>
@@ -40,4 +47,4 @@ const HomeContentCard = ({ gameData }) => {
 		</li>
 	);
 };
-export default HomeContentCard;
+export default ItemCard;

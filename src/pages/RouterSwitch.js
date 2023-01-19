@@ -5,8 +5,7 @@ import NavBar from "../components/Navigation/NavBar";
 import Checkout from "./Checkout";
 import HomePage from "./HomePage";
 import Shop from "./Shop";
-import Item from "../components/Items/Item";
-
+import ItemDetails from "./ItemDetails";
 const RouterSwitch = () => {
 	return (
 		<>
@@ -16,7 +15,7 @@ const RouterSwitch = () => {
 					<Route path="/" element={<HomePage />} />
 					<Route path="/shop" element={<Shop />} />
 					<Route path="/checkout" element={<Checkout />} />
-					<Route path="/shop/:id" element={<Item/>}/>
+					<Route path="/shop/:id" element={<ItemDetails/>}/>
 				</Routes>
 			</BrowserRouter>
 		</>

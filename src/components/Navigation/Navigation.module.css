@@ -13,14 +13,14 @@
 }
 .linksFont{
     font-size: 1.2rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     text-transform: uppercase;
 }
 .navContDisplay {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #43507F;
+	background-color: #1F2222;
 	padding: 1em 4em 1em 4em;
 	box-sizing: border-box;
 }

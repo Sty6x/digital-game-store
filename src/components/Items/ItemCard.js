@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import cardStyles from "./itemCard.module.css";
+import cardStyles from "./ItemCSS/itemCard.module.css";
 import steamLogo from "../../assets/img/steam-icon.png";
 import metacriticLogo from "../../assets/img/metacritic-logo.png";
 

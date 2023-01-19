@@ -160,7 +160,14 @@ li {
 	display: flex;
 	justify-content: space-between;
 }
-
+.home-cards > h3 {
+	font-size: 1.3rem;
+	width: 80%;
+	text-transform: uppercase;
+}
+.home-cards > .home-card-prices {
+	font-size: 1.3rem;
+}
 .home-card-title-score-ratings {
 	margin-left: auto;
 }
@@ -168,6 +175,6 @@ li {
 	flex: 1;
 }
 
-p{
+p {
 	text-align: center;
 }

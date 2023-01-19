@@ -51,17 +51,15 @@ const ContentContainer = () => {
 	}
 
 	const DISPLAY_GAME_LIST = sortedGameList.map((game) => {
-		return (
-				<HomeContentCard key={game.steamAppID} gameData={game} />
-		);
+		return <HomeContentCard key={game.steamAppID} gameData={game} />;
 	});
 	return (
-		<>
-		 <h1>POPULAR GAMES</h1>
-		<div className={`${contentStyles.gridContainer}`}>
-			{subLoad ? <>LOADING CONTENTS...</> : DISPLAY_GAME_LIST}
+		<div className={`${contentStyles.container}`}>
+			<h1 className={`${contentStyles.header}`}>POPULAR GAMES ON SALE!</h1>
+			<div className={`${contentStyles.gridContainer}`}>
+				{subLoad ? <>LOADING CONTENTS...</> : DISPLAY_GAME_LIST}
+			</div>
 		</div>
-		</>
 	);
 };
 export default ContentContainer;

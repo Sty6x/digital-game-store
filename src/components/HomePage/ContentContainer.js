@@ -56,9 +56,12 @@ const ContentContainer = () => {
 		);
 	});
 	return (
+		<>
+		 <h1>POPULAR GAMES</h1>
 		<div className={`${contentStyles.gridContainer}`}>
 			{subLoad ? <>LOADING CONTENTS...</> : DISPLAY_GAME_LIST}
 		</div>
+		</>
 	);
 };
 export default ContentContainer;

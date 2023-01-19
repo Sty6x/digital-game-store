@@ -8,7 +8,7 @@ const HomeContentCard = ({ gameData }) => {
 					<img src={gameData.thumb} className={`${contentCardStyles.homeCardImage}`} />
 				</div>
 				<div id="home-card-textNprice-container" className={`${contentCardStyles.textNpriceDisplay}`}>
-					<div id="home-card-textNtitle" className="home-card-contents">
+					<div id="home-card-textNtitle" className={`home-card-contents ${contentCardStyles.style}`}>
 						<div className="home-cards" id="home-card-title">
 							<h3>{gameData.title}</h3>
 							<h4 className="home-card-title-score-ratings">${gameData.salePrice}</h4>

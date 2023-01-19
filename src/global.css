@@ -125,9 +125,11 @@ table {
 	border-spacing: 0;
 }
 
-body {
-	height: 100vh;
-	width: 100vw;
+body,
+html {
+	min-height: 100vh;
+	min-width: 100vw;
+	overflow-x: hidden;
 }
 #root {
 	height: 100%;
@@ -160,9 +162,9 @@ li {
 	justify-content: space-between;
 }
 
-.home-card-title-score-ratings{
+.home-card-title-score-ratings {
 	margin-left: auto;
 }
-.home-card-contents{
+.home-card-contents {
 	flex: 1;
 }

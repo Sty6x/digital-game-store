@@ -6,7 +6,7 @@
 }
 
 .size{
-	height: 15%;
+	height: 10%;
 }
 .linksDisplay {
 	display: flex;
@@ -20,7 +20,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: red;
+	background-color: #43507F;
 	padding: 1em 4em 1em 4em;
 	box-sizing: border-box;
 }

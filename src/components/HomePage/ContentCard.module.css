@@ -1,6 +1,5 @@
 .textNpriceDisplay {
-	display: flex;
-	justify-content: space-between;
+
 }
 
 .homeCardContainer {
@@ -19,7 +18,3 @@
 	width: 100%;
 	height: 100%;
 }
-/* .cardList {
-	width: 100%;
-	height: 10%;
-} */

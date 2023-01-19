@@ -1,3 +1,14 @@
 .item-display-container{
     background-color: red;
+    display: flex;
+    height: 800px;
+    width: 1500px;
+    /* flex: 1; */
+}
+.item-display-img-container{
+    width: 60%;
+}
+.item-display-contents{
+    width: 30%;
+    flex: 1;
 }

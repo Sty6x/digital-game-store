@@ -20,6 +20,7 @@ const ItemDetails = () => {
 	}, []);
 
 	return (
+        // pass the fetched data from api to item display as props
 		<div className="item-detail-main-container">
 			<ItemDisplay />
 		</div>

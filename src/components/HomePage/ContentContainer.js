@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import contentStyles from "./Content.module.css";
 import HomeContentCard from "./HomeContentCard";
 
@@ -51,7 +52,11 @@ const ContentContainer = () => {
 	}
 
 	const DISPLAY_GAME_LIST = sortedGameList.map((game) => {
-		return <HomeContentCard key={game.steamAppID} gameData={game} />;
+		return (
+			<Link to={`/shop/${game.gameID}`}>
+				<HomeContentCard key={game.steamAppID} gameData={game} />
+			</Link>
+		);
 	});
 	return (
 		<div className={`${contentStyles.container}`}>

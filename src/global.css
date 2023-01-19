@@ -167,6 +167,11 @@ li {
 }
 .home-cards > .home-card-prices {
 	font-size: 1.3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
 }
 .home-card-title-score-ratings {
 	margin-left: auto;
@@ -174,7 +179,9 @@ li {
 .home-card-contents {
 	flex: 1;
 }
-
+.home-card-list {
+	height: 100%;
+}
 p {
 	text-align: center;
 }

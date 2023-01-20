@@ -17,8 +17,19 @@ const ItemDisplay = ({ gameDetails }) => {
 		});
 	}
 
-	function getGenres() {}
+	//use Promise.setAll to make load finish for all datas
+	function getGenres(genresObj) {
+		const tmpGenreArr = [];
+		for (let genre in genresObj) {
+			console.log(genresObj[genre].name);
+
+			setGameSpecs((prev) => {
+				return { ...prev, genres: genresObj[genre].name };
+			});
+		}
+	}
 	useEffect(() => {
+		getGenres(gameDetails.genres);
 		getDeveloper(gameDetails.credits);
 		console.log(gameSpecs);
 	}, []);
@@ -28,6 +39,7 @@ const ItemDisplay = ({ gameDetails }) => {
 		gameSpecs.devs.map((dev) => {
 			return <p>{dev}</p>;
 		});
+
 	return (
 		<div className="item-display-container">
 			<div className="item-display-img-container">

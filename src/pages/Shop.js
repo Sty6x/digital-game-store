@@ -22,7 +22,7 @@ const Shop = () => {
 	}, []);
 
 	const DISPLAY_GAME_LIST = games.map((game) => {
-		return <li key={game.steamAppID} className="shop-item"> <Link to={`/shop/${game.gameID}`}>{game.title}</Link> </li>;
+		return <li key={game.steamAppID} className="shop-item"> <Link to={`/shop/${game.steamAppID}`}>{game.title}</Link> </li>;
 	});
 
 	return (

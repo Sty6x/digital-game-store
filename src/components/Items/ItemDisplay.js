@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ItemCSS/itemDisplay.css";
 
-const ItemDisplay = ({gameDetails}) => {
+const ItemDisplay = ({ gameDetails }) => {
+	const [devName, setDevName] = useState([]);
+	const [loading, setLoad] = useState(true);
+
+	function getDeveloperObj(credits, name) {
+		const tempArr = [];
+		for (let dev in credits) {
+			tempArr.push(Object.values(credits[dev])[0].name);
+		}
+		setDevName(tempArr);
+	}
+
+	useEffect(() => {
+		getDeveloperObj(gameDetails.credits);
+	}, []);
+
+	const displayDevNames = devName.map(dev=>{
+		return <p>{dev}</p>
+	})
 	return (
 		<div className="item-display-container">
 			<div className="item-display-img-container">
@@ -9,10 +27,11 @@ const ItemDisplay = ({gameDetails}) => {
 			</div>
 			<div className="item-display-contents">
 				<div className="item-title-container">
-					<h1 className="item-title">Title</h1>
+					<h1 className="item-title">{gameDetails.title_formatted}</h1>
 				</div>
 				<div className="item-descriptions">
 					<p>Genres</p>
+					{displayDevNames}
 					<p>Credits</p>
 					<p>Date</p>
 					<p>Source Profile</p>

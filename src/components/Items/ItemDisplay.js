@@ -2,24 +2,32 @@ import React, { useEffect, useState } from "react";
 import "./ItemCSS/itemDisplay.css";
 
 const ItemDisplay = ({ gameDetails }) => {
-	const [devName, setDevName] = useState([]);
-	const [loading, setLoad] = useState(true);
+	let [gameSpecs, setGameSpecs] = useState({});
+	const [loading, setLoading] = useState(true);
 
-	function getDeveloperObj(credits) {
+	function getDeveloper(credits) {
 		const tempArr = [];
 		for (let dev in credits) {
 			tempArr.push(Object.values(credits[dev])[0].name);
 		}
-		setDevName(tempArr);
+		setGameSpecs((prev) => {
+			setLoading(!loading);
+			return { ...prev, devs: tempArr };
+			// console.log(prev);
+		});
 	}
 
+	function getGenres() {}
 	useEffect(() => {
-		getDeveloperObj(gameDetails.credits);
+		getDeveloper(gameDetails.credits);
+		console.log(gameSpecs);
 	}, []);
 
-	const displayDevNames = devName.map(dev=>{
-		return <p>{dev}</p>
-	})
+	const displayDevNames =
+		!loading &&
+		gameSpecs.devs.map((dev) => {
+			return <p>{dev}</p>;
+		});
 	return (
 		<div className="item-display-container">
 			<div className="item-display-img-container">

@@ -11,7 +11,6 @@ const ItemDisplay = ({ gameDetails }) => {
 			tempArr.push(Object.values(credits[dev])[0].name);
 		}
 		setGameSpecs((prev) => {
-			setLoading(!loading);
 			return { ...prev, devs: tempArr };
 			// console.log(prev);
 		});
@@ -22,16 +21,18 @@ const ItemDisplay = ({ gameDetails }) => {
 		const tmpGenreArr = [];
 		for (let genre in genresObj) {
 			console.log(genresObj[genre].name);
-
-			setGameSpecs((prev) => {
-				return { ...prev, genres: genresObj[genre].name };
-			});
+			tmpGenreArr.push(genresObj[genre].name);
 		}
+		setGameSpecs((prev) => {
+			return { ...prev, genres: tmpGenreArr };
+		});
 	}
 	useEffect(() => {
-		getGenres(gameDetails.genres);
-		getDeveloper(gameDetails.credits);
-		console.log(gameSpecs);
+		Promise.allSettled([getGenres(gameDetails.genres), getDeveloper(gameDetails.credits)]).then(
+			(data) => {
+				setLoading(!loading);
+			}
+		);
 	}, []);
 
 	const displayDevNames =
@@ -50,7 +51,7 @@ const ItemDisplay = ({ gameDetails }) => {
 					<h1 className="item-title">{gameDetails.title_formatted}</h1>
 				</div>
 				<div className="item-descriptions">
-					<p>Genres</p>
+					<p>{gameSpecs.genres}</p>
 					{displayDevNames}
 					<p>Credits</p>
 					<p>Date</p>

@@ -27,8 +27,17 @@ const ItemDisplay = ({ gameDetails }) => {
 			return { ...prev, genres: tmpGenreArr };
 		});
 	}
+	function getRudimentaryDetails(obj) {
+		let gameSite = "";
+		for(let site in obj.sites){
+			gameSite = obj.sites[site].url
+		}
+		setGameSpecs((prev) => {
+			return { ...prev ,steamAppID:obj.sku,site:gameSite,year:obj.year};
+		});
+	}
 	useEffect(() => {
-		Promise.allSettled([getGenres(gameDetails.genres), getDeveloper(gameDetails.credits)]).then(
+		Promise.allSettled([getRudimentaryDetails(gameDetails),getGenres(gameDetails.genres), getDeveloper(gameDetails.credits)]).then(
 			(data) => {
 				setLoading(!loading);
 			}
@@ -53,9 +62,8 @@ const ItemDisplay = ({ gameDetails }) => {
 				<div className="item-descriptions">
 					<p>{gameSpecs.genres}</p>
 					{displayDevNames}
-					<p>Credits</p>
-					<p>Date</p>
-					<p>Source Profile</p>
+					<p>{gameSpecs.year}</p>
+					<a href={gameSpecs.site}>Website</a>
 				</div>
 				{/* get ratings from shark API */}
 				<div className="item-ratings">

@@ -5,7 +5,7 @@ const ItemDisplay = ({ gameDetails }) => {
 	const [devName, setDevName] = useState([]);
 	const [loading, setLoad] = useState(true);
 
-	function getDeveloperObj(credits, name) {
+	function getDeveloperObj(credits) {
 		const tempArr = [];
 		for (let dev in credits) {
 			tempArr.push(Object.values(credits[dev])[0].name);

@@ -75,20 +75,16 @@ const ItemDisplay = ({ gameDetails }) => {
 				</div>
 				<div className="item-descriptions">
 					{!loading && <p className="item-devs">Developed by: {gameSpecs.devs[0]}, {gameSpecs.devs[1]}</p>}
-					<p>Release Date: {gameSpecs.year}</p>
+					<p className="item-release-date">Release Date: {gameSpecs.year}</p>
 					{/* redirect to steam page if site is empty */}
-					<a href={gameSpecs.site}>Website</a>
+					<a className="item-site" href={gameSpecs.site}>Website</a>
 				</div>
 				<div className="item-ratings">
 					<div className="item-rating item-steam-rating">
-						<div>
 							<h4 className="item-rating-score">Steam Ratings: {gameSpecs.userRating}%</h4>
-						</div>
 					</div>
 					<div className="item-rating item-total-reviews-container">
-						<div>
 							<h4 className="item-rating-score">Total Reviews: {gameSpecs.totalReviews}</h4>
-						</div>
 					</div>
 				</div>
 				<div className="item-genres-container">

@@ -55,17 +55,12 @@ const ItemDisplay = ({ gameDetails }) => {
 		});
 	}, []);
 
-	const displayDevNames =
-		!loading &&
-		gameSpecs.devs.map((dev) => {
-			return <p>{dev}</p>;
-		});
 	const displayGenres =
 		!loading &&
 		gameSpecs.genres.map((genre) => {
 			return (
 				<li key={genre} className={genre}>
-				{genre}	
+					{genre}
 				</li>
 			);
 		});
@@ -79,29 +74,25 @@ const ItemDisplay = ({ gameDetails }) => {
 					<h1 className="item-title">{gameDetails.title_formatted}</h1>
 				</div>
 				<div className="item-descriptions">
-					{displayDevNames}
-					<p>{gameSpecs.year}</p>
+					{!loading && <p className="item-devs">Developed by: {gameSpecs.devs[0]}, {gameSpecs.devs[1]}</p>}
+					<p>Release Date: {gameSpecs.year}</p>
 					{/* redirect to steam page if site is empty */}
 					<a href={gameSpecs.site}>Website</a>
 				</div>
 				<div className="item-ratings">
 					<div className="item-rating item-steam-rating">
-						<h4>Steam Rating: </h4>
 						<div>
-							<h4 className="item-rating-score">{gameSpecs.userRating}%</h4>
+							<h4 className="item-rating-score">Steam Ratings: {gameSpecs.userRating}%</h4>
 						</div>
 					</div>
-					<div className="item-rating item-metacritic-score">
-						<h4>Total Reviews:</h4>
+					<div className="item-rating item-total-reviews-container">
 						<div>
-							<h4 className="item-rating-score">{gameSpecs.totalReviews}</h4>
+							<h4 className="item-rating-score">Total Reviews: {gameSpecs.totalReviews}</h4>
 						</div>
 					</div>
-					<ul className="item-genres">
-						
-						{displayGenres}
-
-					</ul>
+				</div>
+				<div className="item-genres-container">
+					<ul className="item-genres">Genres: {displayGenres}</ul>
 				</div>
 			</div>
 		</div>

@@ -15,8 +15,8 @@ const ItemDisplay = ({ gameDetails }) => {
 			// console.log(prev);
 		});
 	}
-
-	//use Promise.setAll to make load finish for all datas
+	
+	//use Promise.allSettled to make load finish for all extracted informations
 	function getGenres(genresObj) {
 		const tmpGenreArr = [];
 		for (let genre in genresObj) {
@@ -33,15 +33,18 @@ const ItemDisplay = ({ gameDetails }) => {
 			gameSite = obj.sites[site].url
 		}
 		setGameSpecs((prev) => {
-			return { ...prev ,steamAppID:obj.sku,site:gameSite,year:obj.year};
+
+			return { ...prev ,steamAppID:obj.sku,site:gameSite,year:obj.year,totalReviews:obj.user_reviews_total, userRating:obj.user_reviews_positive};
 		});
 	}
 	useEffect(() => {
 		Promise.allSettled([getRudimentaryDetails(gameDetails),getGenres(gameDetails.genres), getDeveloper(gameDetails.credits)]).then(
 			(data) => {
 				setLoading(!loading);
+				console.log(gameSpecs)
+				console.log(gameDetails)
 			}
-		);
+		)
 	}, []);
 
 	const displayDevNames =
@@ -63,6 +66,7 @@ const ItemDisplay = ({ gameDetails }) => {
 					<p>{gameSpecs.genres}</p>
 					{displayDevNames}
 					<p>{gameSpecs.year}</p>
+					// redirect to steam page if site is empty
 					<a href={gameSpecs.site}>Website</a>
 				</div>
 				{/* get ratings from shark API */}
@@ -70,13 +74,13 @@ const ItemDisplay = ({ gameDetails }) => {
 					<div className="item-rating item-steam-rating">
 						<h4>Steam Rating: </h4>
 						<div>
-							<h4 className="item-rating-score">90%</h4>
+							<h4 className="item-rating-score">{gameSpecs.userRating}%</h4>
 						</div>
 					</div>
 					<div className="item-rating item-metacritic-score">
-						<h4>Metacritic Score:</h4>
+						<h4>Total Reviews:</h4>
 						<div>
-							<h4 className="item-rating-score">54</h4>
+							<h4 className="item-rating-score">{gameSpecs.totalReviews}</h4>
 						</div>
 					</div>
 					<div className="item-rating">

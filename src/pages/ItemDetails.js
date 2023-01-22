@@ -8,6 +8,7 @@ const ItemDetails = () => {
 	const [loading, setLoading] = useState(true);
 
 	async function fetchGameDetails() {
+		// Need to call barter first before calling giphy to be able to query the title of the game to giphy API
 		const fetchedGameApi = await fetch(`https://barter.vg/steam/app/${id}/json`);
 		const fetchedGame = await fetchedGameApi.json();
 		const fetchedGametitle = fetchedGame.title_formatted;
@@ -40,7 +41,7 @@ const ItemDetails = () => {
 	useEffect(() => {
 		if (!loading) {
 			console.log("loading done");
-			console.log(gameTitle);
+			// console.log(gameTitle);
 		}
 	}, [loading]);
 	return (

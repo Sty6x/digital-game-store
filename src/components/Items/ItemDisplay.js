@@ -15,7 +15,7 @@ const ItemDisplay = ({ gameDetails }) => {
 			// console.log(prev);
 		});
 	}
-	
+
 	//use Promise.allSettled to make load finish for all extracted informations
 	function getGenres(genresObj) {
 		const tmpGenreArr = [];
@@ -29,22 +29,30 @@ const ItemDisplay = ({ gameDetails }) => {
 	}
 	function getRudimentaryDetails(obj) {
 		let gameSite = "";
-		for(let site in obj.sites){
-			gameSite = obj.sites[site].url
+		for (let site in obj.sites) {
+			gameSite = obj.sites[site].url;
 		}
 		setGameSpecs((prev) => {
-
-			return { ...prev ,steamAppID:obj.sku,site:gameSite,year:obj.year,totalReviews:obj.user_reviews_total, userRating:obj.user_reviews_positive};
+			return {
+				...prev,
+				steamAppID: obj.sku,
+				site: gameSite,
+				year: obj.year,
+				totalReviews: obj.user_reviews_total,
+				userRating: obj.user_reviews_positive,
+			};
 		});
 	}
 	useEffect(() => {
-		Promise.allSettled([getRudimentaryDetails(gameDetails),getGenres(gameDetails.genres), getDeveloper(gameDetails.credits)]).then(
-			(data) => {
-				setLoading(!loading);
-				console.log(gameSpecs)
-				console.log(gameDetails)
-			}
-		)
+		Promise.allSettled([
+			getRudimentaryDetails(gameDetails),
+			getGenres(gameDetails.genres),
+			getDeveloper(gameDetails.credits),
+		]).then((data) => {
+			setLoading(!loading);
+			console.log(gameSpecs);
+			console.log(gameDetails);
+		});
 	}, []);
 
 	const displayDevNames =
@@ -52,7 +60,15 @@ const ItemDisplay = ({ gameDetails }) => {
 		gameSpecs.devs.map((dev) => {
 			return <p>{dev}</p>;
 		});
-
+	const displayGenres =
+		!loading &&
+		gameSpecs.genres.map((genre) => {
+			return (
+				<li key={genre} className={genre}>
+				{genre}	
+				</li>
+			);
+		});
 	return (
 		<div className="item-display-container">
 			<div className="item-display-img-container">
@@ -63,13 +79,11 @@ const ItemDisplay = ({ gameDetails }) => {
 					<h1 className="item-title">{gameDetails.title_formatted}</h1>
 				</div>
 				<div className="item-descriptions">
-					<p>{gameSpecs.genres}</p>
 					{displayDevNames}
 					<p>{gameSpecs.year}</p>
-					// redirect to steam page if site is empty
+					{/* redirect to steam page if site is empty */}
 					<a href={gameSpecs.site}>Website</a>
 				</div>
-				{/* get ratings from shark API */}
 				<div className="item-ratings">
 					<div className="item-rating item-steam-rating">
 						<h4>Steam Rating: </h4>
@@ -83,9 +97,11 @@ const ItemDisplay = ({ gameDetails }) => {
 							<h4 className="item-rating-score">{gameSpecs.totalReviews}</h4>
 						</div>
 					</div>
-					<div className="item-rating">
-						<p className="item-steam-reviews"> MOSTLY POSITIVE</p>
-					</div>
+					<ul className="item-genres">
+						
+						{displayGenres}
+
+					</ul>
 				</div>
 			</div>
 		</div>

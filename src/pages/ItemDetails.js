@@ -18,9 +18,6 @@ const ItemDetails = () => {
 			);
 			const fetchedGif = await fetchGiphyApi.json();
 			const gifURL = fetchedGif.data[0].images.original.url;
-			console.log(gifURL);
-			console.log(fetchedGif);
-
 			setGameTitle({ ...fetchedGame, gifUrl: gifURL });
 		} catch (error) {
 			console.log(error);

@@ -47,11 +47,12 @@ const ItemDisplay = ({ gameDetails }) => {
 	}
 
 	function getDiscountPercentage({ price, beforePrice }) {
-		console.log(price);
-		const diff = price - beforePrice;
-		const ave = (price + beforePrice) / 2;
+		console.log(price ,beforePrice);
+		const diff =  beforePrice- price;
+		const ave = Math.floor((price + beforePrice) / 2);
 		const discount = (diff / ave) * 100;
-		console.log(diff, ave, discount);
+		console.log( diff,ave);
+		console.log(((price / beforePrice) / 100).toFixed(2))
 		return setGameSpecs((prevState) => ({ ...prevState, discount: discount }));
 	}
 	useEffect(() => {

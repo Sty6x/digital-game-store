@@ -4,6 +4,7 @@
     height: 800px;
     width: 1500px;
     color: white;
+    position: relative;
 
 }
 .item-display-img-container{
@@ -39,8 +40,9 @@
     font-size: 1.2rem;
 }
 
-.item-release-date{
-    /* margin-top: 5px; */
+.item-floating-sale{
+    position: absolute;
+    left: 90%;
 }
 
 .item-descriptions > * {

@@ -26,9 +26,7 @@ const Shop = () => {
 	const DISPLAY_GAME_LIST = games.map((game) => {
 		return (
 			<li key={game.steamAppID} className="shop-item">
-				<Link to={`/shop/${game.steamAppID}`}>
 					<ShopItems game={game}/>
-				</Link>
 			</li>
 		);
 	});

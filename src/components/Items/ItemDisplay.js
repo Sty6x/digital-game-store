@@ -91,7 +91,6 @@ const ItemDisplay = ({ gameDetails }) => {
 				Release Date: <span className="item-dev-info">{gameSpecs.year}</span>
 			</li>
 			<li>
-				{" "}
 				Visit Their Website:
 				<a className="item-site" href={gameSpecs.site}>
 					Website 🌐
@@ -99,7 +98,9 @@ const ItemDisplay = ({ gameDetails }) => {
 			</li>
 		</ul>
 	) : null;
-	const displayPrices = !loading ? <p className="item-display-price">${gameSpecs.price} <span className="item-display-price-before">{gameSpecs.beforePrice}</span></p> : null;
+
+	const displayPrices = !loading ? <p className="item-display-price">${gameSpecs.price} <span className="item-display-price-before">${gameSpecs.beforePrice}</span></p> : null;
+
 	return (
 		<div className="item-display-container">
 			<div className="item-display-floating-sale">

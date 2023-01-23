@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ShopItems from "../components/Items/ShopItems";
-
+import ShopItems from "../components/Shop/ShopItems";
+import "../components/Shop/ShopCSS/shop.css"
 const Shop = () => {
 	const [games, setGames] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -36,7 +36,7 @@ const Shop = () => {
 	return (
 		<div className="shop-items-container">
 			<h1>GAME LIST</h1>
-			{!loading ? <ul> {DISPLAY_GAME_LIST}</ul>: <> Loading Game List </>}
+			{!loading ? <ul className="shop-item-list"> {DISPLAY_GAME_LIST}</ul>: <> Loading Game List </>}
 		</div>
 	);
 };

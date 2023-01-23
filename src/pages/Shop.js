@@ -18,13 +18,25 @@ const Shop = () => {
 			console.log(err);
 		}
 	}
+
 	useEffect(() => {
 		fetchGameList();
 	}, []);
 
+	const DISPLAY_GAME_LIST = games.map((game) => {
+		return (
+			<li key={game.steamAppID} className="shop-item">
+				<Link to={`/shop/${game.steamAppID}`}>
+					<ShopItems gameList={games}/>
+				</Link>
+			</li>
+		);
+	});
+
 	return (
 		<div className="shop-items-container">
-			{!loading ? <ShopItems gameList={games} /> : <> Loading Game List </>}
+			<h1>GAME LIST</h1>
+			{!loading ? <ul> {DISPLAY_GAME_LIST}</ul>: <> Loading Game List </>}
 		</div>
 	);
 };

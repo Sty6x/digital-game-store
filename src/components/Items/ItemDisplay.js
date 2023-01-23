@@ -99,7 +99,7 @@ const ItemDisplay = ({ gameDetails }) => {
 		</ul>
 	) : null;
 
-	const displayPrices = !loading ? <p className="item-display-price">${gameSpecs.price} <span className="item-display-price-before">${gameSpecs.beforePrice}</span></p> : null;
+	const displayPrices = !loading ? <p className="item-display-price">SALE: ${gameSpecs.price} <span className="item-display-price-before">${gameSpecs.beforePrice}</span></p> : null;
 
 	return (
 		<div className="item-display-container">

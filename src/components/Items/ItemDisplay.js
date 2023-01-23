@@ -40,7 +40,7 @@ const ItemDisplay = ({ gameDetails }) => {
 				year: obj.year,
 				totalReviews: obj.user_reviews_total,
 				userRating: obj.user_reviews_positive,
-				price: obj.price,
+				price: obj.price / 100,
 			};
 		});
 	}
@@ -66,10 +66,20 @@ const ItemDisplay = ({ gameDetails }) => {
 			);
 		});
 	const displayDevsInformation = !loading ? (
-		<ul>
+		<ul className="item-dev-information-list">
 			<li>Developer: {gameSpecs.devs[0]}</li>
 			<li>Publisher: {gameSpecs.devs[1]}</li>
 			<li className="item-release-date">Release Date: {gameSpecs.year}</li>
+			<li>
+				<a className="item-site" href={gameSpecs.site}>
+					Website
+				</a>
+			</li>
+		</ul>
+	) : null;
+	const displayPrices = !loading ? (
+		<ul className="item-price-information-list">
+			<li>Price: ${gameSpecs.price}</li>
 		</ul>
 	) : null;
 	return (
@@ -85,9 +95,9 @@ const ItemDisplay = ({ gameDetails }) => {
 					{displayDevsInformation}
 
 					{/* redirect to steam page if site is empty */}
-					<a className="item-site" href={gameSpecs.site}>
-						Website
-					</a>
+				</div>
+				<div className="item-pricing-container">
+					{displayPrices}
 				</div>
 				<div className="item-ratings">
 					<div className="item-rating item-steam-rating">

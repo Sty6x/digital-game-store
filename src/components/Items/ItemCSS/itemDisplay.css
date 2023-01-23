@@ -63,18 +63,19 @@
 
 .item-floating-sale {
 	position: absolute;
-	left: -8px;
-	top: 20px;
+	/* left: -5px; */
+    left: 60%;
+	/* top: 20px; */
 	position: absolute;
 	background-color: #1b9045;
-	width: 150px;
-	height: 100px;
+	width: 130px;
+	height: 80px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 3px 5px;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
+	/* border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px; */
 	font-weight: bold;
 	box-shadow: inset -1px 0 10px rgba(0, 0, 0, 0.7);
 	padding: 5px 10px;

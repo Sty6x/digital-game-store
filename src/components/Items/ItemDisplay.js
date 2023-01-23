@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ItemCard from "./ItemCard";
 import "./ItemCSS/itemDisplay.css";
 
 const ItemDisplay = ({ gameDetails }) => {

@@ -8,6 +8,8 @@
 
 .shop-item-list {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-auto-rows: 1fr;
+	grid-template-columns: repeat(3, minmax(500px,1fr));
+	grid-auto-rows: minmax(300px, auto);
+	min-width: 60%;
+justify-content: center;
 }

@@ -101,7 +101,7 @@ const ItemDisplay = ({ gameDetails }) => {
 		<div className="item-display-container">
 			<div className="item-floating-sale">
 				<p>
-					{gameSpecs.discount}% <span className="item-floating-sale-span">OFF</span>
+					-{gameSpecs.discount}% <span className="item-floating-sale-span"></span>
 				</p>
 			</div>
 			<div className="item-display-img-container">

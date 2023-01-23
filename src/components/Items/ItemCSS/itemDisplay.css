@@ -19,8 +19,7 @@
 .item-display-contents {
 	width: 30%;
 	flex: 1;
-	padding: 50px 80px;
-
+	padding: 50px 50px;
 	display: flex;
 	flex-direction: column;
 }
@@ -37,6 +36,7 @@
 	font-size: 2.4rem;
 	text-align: center;
 	text-transform: uppercase;
+    margin-bottom: 50px;
 }
 .item-dev-information-list {
 	font-size: 1.2rem;
@@ -75,7 +75,6 @@
 .item-btn-options {
 	display: flex;
 	flex-direction: column;
-    cursor: pointer;
 }
 .item-btn-options > * {
 	appearance: none;
@@ -85,10 +84,15 @@
 	padding: 10px 20px;
 	border-radius: 6px;
 	height: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .item-btn-buy {
-	background-color: white;
+	background-color: #f9d713;
+    color: #1f2222;
+
 }
 .item-btn-add {
 	background-color: rgba(0, 0, 0, 0);

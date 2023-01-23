@@ -33,11 +33,11 @@
 }
 
 .item-title {
-	font-size: 2.5rem;
+	font-size: 3rem;
 	text-align: center;
 	text-transform: uppercase;
 }
-.item-devs {
+.item-dev-information-list {
 	font-size: 1.2rem;
 }
 

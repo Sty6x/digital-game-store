@@ -109,14 +109,18 @@ const ItemDisplay = ({ gameDetails }) => {
 			</div>
 			<div className="item-display-contents">
 				<div className="item-content item-title-container">
-					<h1 className="item-title">{gameDetails.title}</h1>
+					<h1 className="item-title">{gameDetails.title_formatted}</h1>
 				</div>
-				<div className="item-content item-descriptions">
-					{displayDevsInformation}
 
-					{/* redirect to steam page if site is empty */}
-				</div>
 				<div className="item-content item-pricing-container">{displayPrices}</div>
+				<div className="item-content item-btn-options">
+					<button className="item-btn-buy" type="button">
+						BUY NOW
+					</button>
+					<button className="item-btn-add" type="button">
+						ADD TO CART
+					</button>
+				</div>
 				<div className="item-content item-ratings">
 					<div className="item-rating item-steam-rating">
 						<h4 className="item-rating-score">Steam Ratings: {gameSpecs.userRating}%</h4>
@@ -125,8 +129,13 @@ const ItemDisplay = ({ gameDetails }) => {
 						<h4 className="item-rating-score">Total Reviews: {gameSpecs.totalReviews}</h4>
 					</div>
 				</div>
-				<div className="item-content item-genres-container">
+				{/* <div className="item-content item-genres-container">
 					<ul className="item-genres">Genres: {displayGenres} </ul>
+				</div> */}
+				<div className="item-content item-descriptions">
+					{displayDevsInformation}
+
+					{/* redirect to steam page if site is empty */}
 				</div>
 			</div>
 		</div>

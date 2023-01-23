@@ -18,7 +18,7 @@ const ShopItems = ({ game }) => {
 			<div className="shop-items-information-container">
 				<h3 className="shop-items-title">{game.title}</h3>
 				<p className="shop-items-price">
-					$9.99 <span className="shop-items-original-price">$39.99</span>
+					${game.salePrice} <span className="shop-items-original-price">${game.normalPrice}</span>
 				</p>
 				<div className="shop-items-options">
 					<button className="shop-items-buy-btn" type="button">

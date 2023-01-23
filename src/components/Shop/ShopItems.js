@@ -10,7 +10,7 @@ const ShopItems = ({ game }) => {
 				<img className="shop-items-img" src="..." alt="Video Game Thumbnail" />
 			</div>
 			<div className="shop-items-information-container">
-				<h3 className="shop-items-title">Game Title</h3>
+				<h3 className="shop-items-title">{game.title}</h3>
 				<p className="shop-items-price">
 					$9.99 <span className="shop-items-original-price">$39.99</span>
 				</p>

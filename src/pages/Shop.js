@@ -27,7 +27,7 @@ const Shop = () => {
 		return (
 			<li key={game.steamAppID} className="shop-item">
 				<Link to={`/shop/${game.steamAppID}`}>
-					<ShopItems gameList={games}/>
+					<ShopItems game={game}/>
 				</Link>
 			</li>
 		);

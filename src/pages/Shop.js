@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ShopItems from "../components/Items/ShopItems";
 
 const Shop = () => {
 	const [games, setGames] = useState([]);
@@ -12,7 +13,7 @@ const Shop = () => {
 			const GAMES = await FETCHED_GAME_LIST.json();
 			console.log(GAMES);
 			setGames([...GAMES]);
-			setLoading((!loading));
+			setLoading(!loading);
 		} catch (err) {
 			console.log(err);
 		}
@@ -22,13 +23,16 @@ const Shop = () => {
 	}, []);
 
 	const DISPLAY_GAME_LIST = games.map((game) => {
-		return <li key={game.steamAppID} className="shop-item"> <Link to={`/shop/${game.steamAppID}`}>{game.title}</Link> </li>;
+		return (
+			<li key={game.steamAppID} className="shop-item">
+				<Link to={`/shop/${game.steamAppID}`}>{game.title}</Link>
+			</li>
+		);
 	});
 
 	return (
 		<>
-			<h1>Shop</h1>
-			<ul className="shop-list">{!loading ? <> {DISPLAY_GAME_LIST}</> : <>loading is true</>}</ul>
+		 	<ShopItems/>
 		</>
 	);
 };

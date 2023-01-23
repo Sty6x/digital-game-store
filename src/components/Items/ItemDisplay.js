@@ -99,8 +99,23 @@ const ItemDisplay = ({ gameDetails }) => {
 		</ul>
 	) : null;
 
-	const displayPrices = !loading ? <p className="item-display-price">SALE: ${gameSpecs.price} <span className="item-display-price-before">${gameSpecs.beforePrice}</span></p> : null;
-
+	const displayPrices = !loading ? (
+		<p className="item-display-price">
+			SALE: ${gameSpecs.price}{" "}
+			<span className="item-display-price-before">${gameSpecs.beforePrice}</span>
+		</p>
+	) : null;
+	const displayRatingsReviews = !loading && (
+		<ul className="item-display-ratings-reviews-list">
+			<li>
+				Steam Ratings: <span className="item-ratings-review-info">{gameSpecs.userRating}</span>
+			</li>
+			<li>
+			
+				Total Reviews: <span className="item-ratings-review-info">{gameSpecs.totalReviews}</span>
+			</li>
+		</ul>
+	);
 	return (
 		<div className="item-display-container">
 			<div className="item-display-floating-sale">
@@ -125,14 +140,7 @@ const ItemDisplay = ({ gameDetails }) => {
 						ADD TO CART
 					</button>
 				</div>
-				<div className="item-content item-ratings">
-					<div className="item-rating item-steam-rating">
-						<h4 className="item-rating-score">Steam Ratings: {gameSpecs.userRating}%</h4>
-					</div>
-					<div className="item-rating item-total-reviews-container">
-						<h4 className="item-rating-score">Total Reviews: {gameSpecs.totalReviews}</h4>
-					</div>
-				</div>
+				<div className="item-content item-ratings">{displayRatingsReviews}</div>
 				{/* <div className="item-content item-genres-container">
 					<ul className="item-genres">Genres: {displayGenres} </ul>
 				</div> */}

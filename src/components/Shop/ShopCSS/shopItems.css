@@ -1,4 +1,21 @@
-.shop-items-container{
-    /* width: 100%; */
-    display: block;
+.shop-items-container {
+	display: flex;
+	flex-direction: column;
+    height: 100%;
+    width: 100%;
+    outline: 1px solid black;
+}
+
+.shop-items-container,.shop-items-img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	align-items: center;
+}
+.shop-items-img-container{
+    height: 60%;
+}
+
+.shop-items-information-container{
+    height: 40%;
 }

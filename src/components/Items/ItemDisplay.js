@@ -47,12 +47,11 @@ const ItemDisplay = ({ gameDetails }) => {
 	}
 
 	function getDiscountPercentage({ price, beforePrice }) {
-		console.log(price ,beforePrice);
-		const diff =  beforePrice- price;
+		const diff = beforePrice - price;
 		const discount = (diff / beforePrice) * 100;
-		console.log(discount)
-		return setGameSpecs((prevState) => ({ ...prevState, discount: discount }));
+		return setGameSpecs((prevState) => ({ ...prevState, discount: Math.floor(discount) }));
 	}
+
 	useEffect(() => {
 		Promise.allSettled([
 			getRudimentaryDetails(gameDetails),
@@ -98,13 +97,13 @@ const ItemDisplay = ({ gameDetails }) => {
 	) : null;
 	return (
 		<div className="item-display-container">
-			<span className="item-floating-sale">{gameSpecs.discount}</span>
+			<span className="item-floating-sale">{gameSpecs.discount}%</span>
 			<div className="item-display-img-container">
 				<img src={gameDetails.gifUrl} alt="game-image" />
 			</div>
 			<div className="item-display-contents">
 				<div className="item-title-container">
-					<h1 className="item-title">{gameDetails.title_formatted}</h1>
+					<h1 className="item-title">{gameDetails.title}</h1>
 				</div>
 				<div className="item-descriptions">
 					{displayDevsInformation}
@@ -114,14 +113,10 @@ const ItemDisplay = ({ gameDetails }) => {
 				<div className="item-pricing-container">{displayPrices}</div>
 				<div className="item-ratings">
 					<div className="item-rating item-steam-rating">
-						<h4 className="item-rating-score">
-							Steam Ratings: {gameSpecs.userRating}%
-						</h4>
+						<h4 className="item-rating-score">Steam Ratings: {gameSpecs.userRating}%</h4>
 					</div>
 					<div className="item-rating item-total-reviews-container">
-						<h4 className="item-rating-score">
-							Total Reviews: {gameSpecs.totalReviews}
-						</h4>
+						<h4 className="item-rating-score">Total Reviews: {gameSpecs.totalReviews}</h4>
 					</div>
 				</div>
 				<div className="item-genres-container">

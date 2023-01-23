@@ -65,6 +65,8 @@ const ItemDisplay = ({ gameDetails }) => {
 	useEffect(() => {
 		if (!loading) {
 			getDiscountPercentage(gameSpecs);
+			console.log(gameSpecs);
+			console.log(gameDetails);
 		}
 	}, [loading]);
 
@@ -98,23 +100,24 @@ const ItemDisplay = ({ gameDetails }) => {
 	return (
 		<div className="item-display-container">
 			<div className="item-floating-sale">
-				<p> {gameSpecs.discount}% <span className="item-floating-sale-span">OFF</span></p>
-				
+				<p>
+					{gameSpecs.discount}% <span className="item-floating-sale-span">OFF</span>
+				</p>
 			</div>
 			<div className="item-display-img-container">
 				<img src={gameDetails.gifUrl} alt="game-image" />
 			</div>
 			<div className="item-display-contents">
-				<div className="item-title-container">
+				<div className="item-content item-title-container">
 					<h1 className="item-title">{gameDetails.title}</h1>
 				</div>
-				<div className="item-descriptions">
+				<div className="item-content item-descriptions">
 					{displayDevsInformation}
 
 					{/* redirect to steam page if site is empty */}
 				</div>
-				<div className="item-pricing-container">{displayPrices}</div>
-				<div className="item-ratings">
+				<div className="item-content item-pricing-container">{displayPrices}</div>
+				<div className="item-content item-ratings">
 					<div className="item-rating item-steam-rating">
 						<h4 className="item-rating-score">Steam Ratings: {gameSpecs.userRating}%</h4>
 					</div>
@@ -122,8 +125,8 @@ const ItemDisplay = ({ gameDetails }) => {
 						<h4 className="item-rating-score">Total Reviews: {gameSpecs.totalReviews}</h4>
 					</div>
 				</div>
-				<div className="item-genres-container">
-					<ul className="item-genres">Genres: {displayGenres}</ul>
+				<div className="item-content item-genres-container">
+					<ul className="item-genres">Genres: {displayGenres} </ul>
 				</div>
 			</div>
 		</div>

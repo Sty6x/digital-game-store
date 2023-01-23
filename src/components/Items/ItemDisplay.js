@@ -87,23 +87,22 @@ const ItemDisplay = ({ gameDetails }) => {
 			<li>
 				Publisher:<span className="item-dev-info">{gameSpecs.devs[1]}</span>
 			</li>
-			<li className="item-release-date">Release Date: <span className="item-dev-info">{gameSpecs.year}</span></li>
-			<li> Visit Their Website: 
+			<li className="item-release-date">
+				Release Date: <span className="item-dev-info">{gameSpecs.year}</span>
+			</li>
+			<li>
+				{" "}
+				Visit Their Website:
 				<a className="item-site" href={gameSpecs.site}>
 					Website 🌐
 				</a>
 			</li>
 		</ul>
 	) : null;
-	const displayPrices = !loading ? (
-		<ul className="item-price-information-list">
-			<li>Price: ${gameSpecs.price}</li>
-			<li>Before: ${gameSpecs.beforePrice}</li>
-		</ul>
-	) : null;
+	const displayPrices = !loading ? <p className="item-display-price">${gameSpecs.price} <span className="item-display-price-before">{gameSpecs.beforePrice}</span></p> : null;
 	return (
 		<div className="item-display-container">
-			<div className="item-floating-sale">
+			<div className="item-display-floating-sale">
 				<p>
 					-{gameSpecs.discount}% <span className="item-floating-sale-span"></span>
 				</p>

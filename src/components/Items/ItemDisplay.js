@@ -65,11 +65,12 @@ const ItemDisplay = ({ gameDetails }) => {
 				</li>
 			);
 		});
-	const displayDevsAndPubs = !loading ? (
-		<>
-			<p>Developer: {gameSpecs.devs[0]}</p>
-			<p>Publisher: {gameSpecs.devs[1]}</p>
-		</>
+	const displayDevsInformation = !loading ? (
+		<ul>
+			<li>Developer: {gameSpecs.devs[0]}</li>
+			<li>Publisher: {gameSpecs.devs[1]}</li>
+			<li className="item-release-date">Release Date: {gameSpecs.year}</li>
+		</ul>
 	) : null;
 	return (
 		<div className="item-display-container">
@@ -81,8 +82,8 @@ const ItemDisplay = ({ gameDetails }) => {
 					<h1 className="item-title">{gameDetails.title_formatted}</h1>
 				</div>
 				<div className="item-descriptions">
-					{displayDevsAndPubs}
-					<p className="item-release-date">Release Date: {gameSpecs.year}</p>
+					{displayDevsInformation}
+
 					{/* redirect to steam page if site is empty */}
 					<a className="item-site" href={gameSpecs.site}>
 						Website

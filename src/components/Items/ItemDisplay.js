@@ -88,9 +88,9 @@ const ItemDisplay = ({ gameDetails }) => {
 				Publisher:<span className="item-dev-info">{gameSpecs.devs[1]}</span>
 			</li>
 			<li className="item-release-date">Release Date: <span className="item-dev-info">{gameSpecs.year}</span></li>
-			<li> WebSite: 
+			<li> Visit Their Website: 
 				<a className="item-site" href={gameSpecs.site}>
-					Website
+					Website 🌐
 				</a>
 			</li>
 		</ul>

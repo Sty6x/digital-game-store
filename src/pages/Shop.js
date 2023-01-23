@@ -34,7 +34,7 @@ const Shop = () => {
 	});
 
 	return (
-		<div className="shop-items-container">
+		<div className="shop-container">
 			<h1>GAME LIST</h1>
 			{!loading ? <ul className="shop-item-list"> {DISPLAY_GAME_LIST}</ul>: <> Loading Game List </>}
 		</div>

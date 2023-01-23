@@ -17,7 +17,6 @@
 }
 
 .item-display-contents {
-	width: 30%;
 	flex: 1;
 	padding: 50px 50px;
 	display: flex;
@@ -40,17 +39,27 @@
 }
 .item-dev-information-list {
 	font-size: 1.2rem;
+	margin-top: 10px;
 	display: flex;
 	flex-direction: column;
 }
 
-
 .item-dev-information-list > * {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	margin: 30px 0px;
 }
 
-
+.item-dev-information-list > *::after {
+	content: "";
+	display: block;
+	width: 100%;
+	position: absolute;
+	height: 2px;
+	background-color: rgb(255, 255, 255,.1);
+    top: 150%;
+}
 
 .item-floating-sale {
 	position: absolute;

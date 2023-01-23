@@ -40,6 +40,7 @@ const ItemDisplay = ({ gameDetails }) => {
 				year: obj.year,
 				totalReviews: obj.user_reviews_total,
 				userRating: obj.user_reviews_positive,
+				price: obj.price,
 			};
 		});
 	}
@@ -64,6 +65,12 @@ const ItemDisplay = ({ gameDetails }) => {
 				</li>
 			);
 		});
+	const displayDevsAndPubs = !loading ? (
+		<>
+			<p>Developer: {gameSpecs.devs[0]}</p>
+			<p>Publisher: {gameSpecs.devs[1]}</p>
+		</>
+	) : null;
 	return (
 		<div className="item-display-container">
 			<div className="item-display-img-container">
@@ -74,17 +81,23 @@ const ItemDisplay = ({ gameDetails }) => {
 					<h1 className="item-title">{gameDetails.title_formatted}</h1>
 				</div>
 				<div className="item-descriptions">
-					{!loading && <p className="item-devs">Developed by: {gameSpecs.devs[0]}, {gameSpecs.devs[1]}</p>}
+					{displayDevsAndPubs}
 					<p className="item-release-date">Release Date: {gameSpecs.year}</p>
 					{/* redirect to steam page if site is empty */}
-					<a className="item-site" href={gameSpecs.site}>Website</a>
+					<a className="item-site" href={gameSpecs.site}>
+						Website
+					</a>
 				</div>
 				<div className="item-ratings">
 					<div className="item-rating item-steam-rating">
-							<h4 className="item-rating-score">Steam Ratings: {gameSpecs.userRating}%</h4>
+						<h4 className="item-rating-score">
+							Steam Ratings: {gameSpecs.userRating}%
+						</h4>
 					</div>
 					<div className="item-rating item-total-reviews-container">
-							<h4 className="item-rating-score">Total Reviews: {gameSpecs.totalReviews}</h4>
+						<h4 className="item-rating-score">
+							Total Reviews: {gameSpecs.totalReviews}
+						</h4>
 					</div>
 				</div>
 				<div className="item-genres-container">

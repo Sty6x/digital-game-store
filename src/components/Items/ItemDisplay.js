@@ -81,10 +81,14 @@ const ItemDisplay = ({ gameDetails }) => {
 		});
 	const displayDevsInformation = !loading ? (
 		<ul className="item-dev-information-list">
-			<li>Developer: {gameSpecs.devs[0]}</li>
-			<li>Publisher: {gameSpecs.devs[1]}</li>
-			<li className="item-release-date">Release Date: {gameSpecs.year}</li>
 			<li>
+				Developer: <span className="item-dev-info">{gameSpecs.devs[0]} </span>
+			</li>
+			<li>
+				Publisher:<span className="item-dev-info">{gameSpecs.devs[1]}</span>
+			</li>
+			<li className="item-release-date">Release Date: <span className="item-dev-info">{gameSpecs.year}</span></li>
+			<li> WebSite: 
 				<a className="item-site" href={gameSpecs.site}>
 					Website
 				</a>
@@ -134,7 +138,6 @@ const ItemDisplay = ({ gameDetails }) => {
 				</div> */}
 				<div className="item-content item-descriptions">
 					{displayDevsInformation}
-
 					{/* redirect to steam page if site is empty */}
 				</div>
 			</div>

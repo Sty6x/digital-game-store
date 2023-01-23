@@ -97,7 +97,10 @@ const ItemDisplay = ({ gameDetails }) => {
 	) : null;
 	return (
 		<div className="item-display-container">
-			<span className="item-floating-sale">{gameSpecs.discount}%</span>
+			<div className="item-floating-sale">
+				<p> {gameSpecs.discount}% <span className="item-floating-sale-span">OFF</span></p>
+				
+			</div>
 			<div className="item-display-img-container">
 				<img src={gameDetails.gifUrl} alt="game-image" />
 			</div>

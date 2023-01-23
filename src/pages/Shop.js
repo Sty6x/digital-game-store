@@ -22,18 +22,10 @@ const Shop = () => {
 		fetchGameList();
 	}, []);
 
-	const DISPLAY_GAME_LIST = games.map((game) => {
-		return (
-			<li key={game.steamAppID} className="shop-item">
-				<Link to={`/shop/${game.steamAppID}`}>{game.title}</Link>
-			</li>
-		);
-	});
-
 	return (
-		<>
-		 	<ShopItems/>
-		</>
+		<div className="shop-items-container">
+			{!loading ? <ShopItems gameList={games} /> : <> Loading Game List </>}
+		</div>
 	);
 };
 

@@ -14,9 +14,9 @@ const ShopItems = ({ game }) => {
 				<p className="shop-items-price">
 					$9.99 <span className="shop-items-original-price">$39.99</span>
 				</p>
-				<div className="items-shop-options">
-					<button className="items-shop-buy-btn" type="button">BUY</button>
-					<button className="items-shop-add-btn" type="button">🛒</button>
+				<div className="shop-items-options">
+					<button className="shop-items-buy-btn" type="button">BUY</button>
+					<button className="shop-items-add-btn" type="button">🛒</button>
 				</div>
 			</div>
 		</div>

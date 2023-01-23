@@ -38,7 +38,6 @@ const ItemDetails = () => {
 	useEffect(() => {
 		if (!loading) {
 			console.log("loading done");
-			// console.log(gameTitle);
 		}
 	}, [loading]);
 	return (

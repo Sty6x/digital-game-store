@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ItemCard from "./ItemCard";
 import "./ItemCSS/itemDisplay.css";
 
 const ItemDisplay = ({ gameDetails }) => {
@@ -13,7 +12,6 @@ const ItemDisplay = ({ gameDetails }) => {
 		}
 		setGameSpecs((prev) => {
 			return { ...prev, devs: tempArr };
-			// console.log(prev);
 		});
 	}
 
@@ -21,7 +19,6 @@ const ItemDisplay = ({ gameDetails }) => {
 	function getGenres(genresObj) {
 		const tmpGenreArr = [];
 		for (let genre in genresObj) {
-			console.log(genresObj[genre].name);
 			tmpGenreArr.push(genresObj[genre].name);
 		}
 		setGameSpecs((prev) => {
@@ -66,8 +63,6 @@ const ItemDisplay = ({ gameDetails }) => {
 	useEffect(() => {
 		if (!loading) {
 			getDiscountPercentage(gameSpecs);
-			console.log(gameSpecs);
-			console.log(gameDetails);
 		}
 	}, [loading]);
 

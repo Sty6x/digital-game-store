@@ -53,7 +53,7 @@ const ContentContainer = () => {
 
 	const DISPLAY_GAME_LIST = sortedGameList.map((game) => {
 		return (
-			<Link to={`/shop/${game.steamAppID}`}>
+			<Link key={game.steamAppID} to={`/shop/${game.steamAppID}`}>
 				<ItemCard key={game.steamAppID} gameData={game} />
 			</Link>
 		);

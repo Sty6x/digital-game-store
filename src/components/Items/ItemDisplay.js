@@ -74,9 +74,9 @@ const ItemDisplay = ({ gameDetails }) => {
 		!loading &&
 		gameSpecs.genres.map((genre) => {
 			return (
-				<li key={genre} className={genre}>
+				<span key={genre} className="item-display-genre-spans" id={genre}>
 					{genre}
-				</li>
+				</span>
 			);
 		});
 	const displayDevsInformation = !loading ? (
@@ -108,10 +108,9 @@ const ItemDisplay = ({ gameDetails }) => {
 	const displayRatingsReviews = !loading && (
 		<ul className="item-display-ratings-reviews-list">
 			<li>
-				Steam Ratings: <span className="item-ratings-review-info">{gameSpecs.userRating}</span>
+				Steam Ratings: <span className="item-ratings-review-info">{gameSpecs.userRating}%</span>
 			</li>
 			<li>
-			
 				Total Reviews: <span className="item-ratings-review-info">{gameSpecs.totalReviews}</span>
 			</li>
 		</ul>
@@ -141,12 +140,14 @@ const ItemDisplay = ({ gameDetails }) => {
 					</button>
 				</div>
 				<div className="item-content item-ratings">{displayRatingsReviews}</div>
-				{/* <div className="item-content item-genres-container">
-					<ul className="item-genres">Genres: {displayGenres} </ul>
-				</div> */}
+
 				<div className="item-content item-descriptions">
 					{displayDevsInformation}
 					{/* redirect to steam page if site is empty */}
+				</div>
+				<div className="item-content item-genres-container">
+					{/* <ul className="item-genres">Genres: {displayGenres} </ul> */}
+					{displayGenres}
 				</div>
 			</div>
 		</div>

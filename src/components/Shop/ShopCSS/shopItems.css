@@ -30,6 +30,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+	box-shadow: inset 0 0 10px rgb(0 0 0 / 70%);
 }
 .shop-items-title {
 	font-size: 1.4rem;
@@ -76,10 +77,16 @@
 .shop-items-buy-btn {
 	width: 70%;
 	background-color: #f9d713;
+	transition: background-color 150ms ease-in-out;
 }
+
+.shop-items-buy-btn:hover {
+	width: 70%;
+	background-color: #ffc235;
+}
+
 
 .shop-items-add-btn {
 	width: 30%;
 	background-color: rgb(237, 237, 237);
-	/* color: black; */
 }

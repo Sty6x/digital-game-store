@@ -39,6 +39,21 @@
 	text-align: start;
 }
 
+.shop-items-original-price{
+	position: relative;
+	margin-left: 5px;
+}
+
+.shop-items-original-price::after{
+	position: absolute;
+	content: "";
+	width: 110%;
+	height: 1px ;
+	left: -2px;
+	top: 50%;
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
 .shop-items-options {
 	display: flex;
 	gap: 20px;

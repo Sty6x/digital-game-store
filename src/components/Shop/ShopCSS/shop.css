@@ -1,16 +1,31 @@
 .shop-container {
 	padding: 4em;
+}
+
+.shop-item-list {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(250px, 400px));
+	grid-auto-rows: auto;
+	min-width: 60%;
+	justify-content: center;
+	gap: 20px;
+}
+
+.shop-container-title {
+	font-size: 3rem;
+	text-align: start;
+	display: block;
+	width: 100%;
+}
+
+.shop-content-container,
+.shop-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 }
 
-.shop-item-list {
-	display: grid;
-	grid-template-columns: repeat(3, minmax(250px,400px));
-	grid-auto-rows: auto;
-	min-width: 60%;
-	justify-content: center;
+.shop-content-container {
 	gap: 20px;
 }

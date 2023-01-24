@@ -61,7 +61,7 @@
 
 .shop-items-options {
 	display: flex;
-	gap: 20px;
+	gap: 10px;
 }
 
 .shop-items-add-btn,
@@ -75,21 +75,45 @@
 }
 
 .shop-items-buy-btn {
-	width: 70%;
+	width: 80%;
 	background-color: #f9d713;
 	transition: background-color 150ms ease-in-out;
 }
 
 .shop-items-buy-btn:hover {
-	width: 70%;
 	background-color: #ffc235;
 }
 
 .shop-items-add-btn {
-	width: 30%;
+	width: 20%;
 	background-color: rgb(237, 237, 237);
 	background-image: url("../../../assets/img/add-cart.png");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 35px 35px;
+	background-size: 30px 30px;
+}
+
+@keyframes addBtnAnim {
+	0% {
+		background-position: 50% 0px;
+	}
+	25% {
+		background-position: 50% -4px;
+	}
+	50% {
+		background-position: 50% -10px;
+	}
+	75% {
+		background-position: 50% 20px;
+	}
+	100% {
+		background-position: 50% 0px;
+	}
+}
+
+.shop-items-add-btn:hover {
+	animation-name: addBtnAnim;
+	animation-direction: alternate;
+	animation-duration: 300ms;
+	animation-timing-function: cubic-bezier(0, 1.4, 0.61, 0.22);
 }

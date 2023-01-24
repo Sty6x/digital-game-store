@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ShopCSS/shopItems.css";
+import addCartPng from "../../assets/img/add-cart.png"
 
 const ShopItems = ({ game }) => {
 	console.log(game);
@@ -24,9 +25,7 @@ const ShopItems = ({ game }) => {
 					<button className="shop-items-buy-btn" type="button">
 						BUY
 					</button>
-					<button className="shop-items-add-btn" type="button">
-						🛒
-					</button>
+					<button className="shop-items-add-btn" type="button"/>
 				</div>
 			</div>
 		</div>

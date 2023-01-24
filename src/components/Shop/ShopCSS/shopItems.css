@@ -85,8 +85,11 @@
 	background-color: #ffc235;
 }
 
-
 .shop-items-add-btn {
 	width: 30%;
 	background-color: rgb(237, 237, 237);
+	background-image: url("../../../assets/img/add-cart.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 35px 35px;
 }

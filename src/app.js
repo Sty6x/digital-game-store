@@ -1,6 +1,6 @@
 import React from "react";
 import RouterSwitch from "./pages/RouterSwitch";
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 
 export const shoppingContext = createContext();
 

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./ShopCSS/shopItems.css";
 import addCartPng from "../../assets/img/add-cart.png"
+import { shoppingContext } from "../../app";
 
 const ShopItems = ({ game }) => {
-	console.log(game);
+
+	const { _, addToCart } = useContext(shoppingContext);
+
 	return (
 		<div className="shop-items-container">
 			<div className="shop-items-img-container">
@@ -25,7 +28,9 @@ const ShopItems = ({ game }) => {
 					<button className="shop-items-buy-btn" type="button">
 						BUY
 					</button>
-					<button className="shop-items-add-btn" type="button"/>
+					<button onClick={() => {
+						addToCart(game.steamAppID)
+					}} className="shop-items-add-btn" type="button" />
 				</div>
 			</div>
 		</div>

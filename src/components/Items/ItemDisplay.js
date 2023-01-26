@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { shoppingContext } from "../../app";
 import "./ItemCSS/itemDisplay.css";
 
 const ItemDisplay = ({ gameDetails }) => {
 	let [gameSpecs, setGameSpecs] = useState({});
 	const [loading, setLoading] = useState(true);
+	const { _, addToCart } = useContext(shoppingContext)
 
 	function getDeveloper(credits) {
 		const tempArr = [];
@@ -40,6 +42,7 @@ const ItemDisplay = ({ gameDetails }) => {
 				userRating: obj.user_reviews_positive,
 				price: obj.price / 100,
 				beforePrice: obj.price_high / 100,
+				gifUrl: obj.gifUrl
 			};
 		});
 	}
@@ -119,7 +122,7 @@ const ItemDisplay = ({ gameDetails }) => {
 				</p>
 			</div>
 			<div className="item-display-img-container">
-				<img src={gameDetails.gifUrl} alt="game-image" />
+				<img src={gameSpecs.gifUrl} alt="game-image" />
 			</div>
 			<div className="item-display-contents">
 				<div className="item-content item-title-container">
@@ -131,7 +134,9 @@ const ItemDisplay = ({ gameDetails }) => {
 					<button className="item-btn-buy" type="button">
 						BUY NOW
 					</button>
-					<button className="item-btn-add" type="button">
+					<button onClick={() => {
+						addToCart(gameSpecs.steamAppID)
+					}} className="item-btn-add" type="button">
 						ADD TO CART
 					</button>
 				</div>

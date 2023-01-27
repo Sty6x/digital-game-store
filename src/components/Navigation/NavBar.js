@@ -6,7 +6,7 @@ import CheckoutSidebar from "./Checkout/CheckoutSidebar";
 
 
 const NavBar = () => {
-	const sideBarRef = useRef(null)
+	const sideBarRef = useRef()
 	const { shoppingCart, _ } = useContext(shoppingContext);
 	const pageLinks = [
 		{ path: "", url: "Home" },
@@ -28,8 +28,8 @@ const NavBar = () => {
 	function sideBarActivity(ref) {
 		const sideBar = ref.current
 		if (sideBar.classList.contains("checkout-sidebar-inactive")) {
-			sideBar.classList.remove("checkout-sidebar-inactive")
 			sideBar.classList.add("checkout-sidebar-active")
+			sideBar.classList.remove("checkout-sidebar-inactive")
 		}
 		else {
 			sideBar.classList.add("checkout-sidebar-inactive")
@@ -78,7 +78,6 @@ const NavBar = () => {
 					}} className={navStyles.checkoutBtn} >CHECKOUT</button>
 				</ul>
 			</div>
-			{/* <div ref={sideBarRef} className={navStyles.checkoutSidebarInactive}></div> */}
 			<CheckoutSidebar sideBarRef={sideBarRef} shoppingCartItems={shoppingCartItems} />
 		</div>
 	);

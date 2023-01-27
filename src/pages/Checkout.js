@@ -31,7 +31,7 @@ const Checkout = () => {
     })
     return (
         <div className="checkout-container">
-            Checkout
+            {!loading && displayCheckoutItems}
         </div>
     )
 }

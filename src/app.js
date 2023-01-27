@@ -13,7 +13,7 @@ const App = () => {
 	}
 
 	return (
-		<shoppingContext.Provider value={{ shoppingCart, addToCart }}>
+		<shoppingContext.Provider value={{ setShoppingCart, shoppingCart, addToCart }}>
 			<RouterSwitch />
 		</shoppingContext.Provider>
 	);

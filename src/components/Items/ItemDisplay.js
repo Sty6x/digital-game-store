@@ -5,7 +5,7 @@ import "./ItemCSS/itemDisplay.css";
 const ItemDisplay = ({ gameDetails }) => {
 	let [gameSpecs, setGameSpecs] = useState({});
 	const [loading, setLoading] = useState(true);
-	const { _, addToCart } = useContext(shoppingContext)
+	const shopContext = useContext(shoppingContext)
 
 	function getDeveloper(credits) {
 		const tempArr = [];
@@ -135,7 +135,7 @@ const ItemDisplay = ({ gameDetails }) => {
 						BUY NOW
 					</button>
 					<button onClick={() => {
-						addToCart(gameSpecs.steamAppID)
+						shopContext.addToCart(gameSpecs.steamAppID)
 					}} className="item-btn-add" type="button">
 						ADD TO CART
 					</button>

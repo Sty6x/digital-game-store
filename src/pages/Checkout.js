@@ -20,11 +20,15 @@ const Checkout = () => {
         fetchGameList(shoppingCart).then(responses => {
             console.log(responses)
             return responses
+        }).then(parsedJsonData => {
+            setShoppingCartItems(prev => [...prev, ...parsedJsonData])
+        }).then(_ => {
+            setLoading(!loading)
         })
     }, [])
 
     const displayCheckoutItems = shoppingCartItems.map(item => {
-        return (<CheckoutItems gameData={item} />)
+        return (<CheckoutItems key={item.steamAppID} gameData={item} />)
     })
     return (
         <div>

@@ -81,16 +81,16 @@
 	left: 60%;
 	top: 100%;
 	z-index: inherit;
-	transition: width 150ms ease-in-out;
+	transition: left 150ms ease-in-out;
 }
 
 .checkoutSidebarInactive {
-
 	min-height: 100vh;
+	transform: rotateY(180deg);
 	position: absolute;
-	width: 0%;
+	/* width: 50%; */
 	background-color: red;
-	left: 60%;
+	left: 100%;
 	top: 100%;
 	z-index: inherit;
 	content: "";

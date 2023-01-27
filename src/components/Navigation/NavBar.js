@@ -20,11 +20,11 @@ const NavBar = () => {
 	});
 
 	function sideBarActivity(ref) {
-		if (ref.current.classList.contains(navStyles.checkoutSidebarActive)) {
-			ref.current.classList.replace(`${navStyles.checkoutSidebarActive}`, `${navStyles.chechoutSidebarInactive}`)
+		if (ref.current.classList.contains(navStyles.checkoutSidebarInactive)) {
+			ref.current.classList.replace(`${navStyles.checkoutSidebarInactive}`, `${navStyles.checkoutSidebarActive}`)
 		} else {
 
-			ref.current.classList.replace(`${navStyles.chechoutSidebarInactive}`, `${navStyles.checkoutSidebarActive}`)
+			ref.current.classList.replace(`${navStyles.checkoutSidebarActive}`, `${navStyles.checkoutSidebarInactive}`)
 		}
 		console.log(ref.current)
 	}
@@ -41,7 +41,7 @@ const NavBar = () => {
 					}} className={navStyles.checkoutBtn} >CHECKOUT</button>
 				</ul>
 			</div>
-			<div ref={sideBarRef} className={navStyles.checkoutSidebarActive}></div>
+			<div ref={sideBarRef} className={navStyles.checkoutSidebarInactive}></div>
 		</div>
 	);
 };

@@ -210,13 +210,3 @@ p {
 	width: 50px;
 	height: 50px;
 }
-
-.checkout-sidebar {
-	min-height: 100%;
-	position: sticky;
-	width: 40%;
-	background-color: black;
-	/* left: 60%; */
-	top: 20px;
-	z-index: 9;
-}

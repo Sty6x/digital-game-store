@@ -35,6 +35,13 @@
 	z-index: 9;
 }
 
+.innerCont {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
 .logoFont {
 	font-size: 3.3rem;
 	font-weight: bold;
@@ -64,4 +71,14 @@
 	text-align: black;
 	padding: 5px 10px;
 	cursor: pointer;
+}
+
+.checkoutSidebar {
+	min-height: 100%;
+	position: absolute;
+	width: 40%;
+	background-color: red;
+	left: 60%;
+	top: 100px;
+	z-index: inherit;
 }

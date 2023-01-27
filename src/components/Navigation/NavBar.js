@@ -25,12 +25,12 @@ const NavBar = () => {
 			sideBar.classList.remove(navStyles.checkoutSidebarInactive)
 			sideBar.classList.add(navStyles.checkoutSidebarActive)
 		}
-		else if (sideBar.classList.contains(navStyles.checkoutSidebarActive)) {
+		else {
 			sideBar.classList.add(navStyles.checkoutSidebarInactive)
 			setTimeout(() => {
 				sideBar.classList.remove(navStyles.checkoutSidebarActive)
 				console.log('done')
-			}, 150)
+			}, 155)
 		}
 		console.log(sideBar)
 	}

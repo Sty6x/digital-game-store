@@ -115,7 +115,7 @@
 	transform: rotateY(180deg);
 	position: absolute;
 	background-color: red;
-	/* left: 100%; */
+	left: 100%;
 	top: 100%;
 	z-index: inherit;
 	content: "";

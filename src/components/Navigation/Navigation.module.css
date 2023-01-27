@@ -73,12 +73,25 @@
 	cursor: pointer;
 }
 
-.checkoutSidebar {
-	min-height: 100%;
+.checkoutSidebarActive {
+	min-height: 100vh;
 	position: absolute;
 	width: 40%;
 	background-color: red;
 	left: 60%;
-	top: 100px;
+	top: 100%;
 	z-index: inherit;
+	transition: width 150ms ease-in-out;
+}
+
+.checkoutSidebarInactive {
+
+	min-height: 100vh;
+	position: absolute;
+	width: 0%;
+	background-color: red;
+	left: 60%;
+	top: 100%;
+	z-index: inherit;
+	content: "";
 }

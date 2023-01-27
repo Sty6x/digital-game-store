@@ -1,7 +1,7 @@
 import React from "react";
 
-const CheckoutItems = () => {
-
+const CheckoutItems = ({ gameData }) => {
+    // console.log(gameData)
     return (<> ITEM </>)
 }
 

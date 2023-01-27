@@ -10,25 +10,25 @@ const Checkout = () => {
     // https://www.cheapshark.com/api/1.0/games?steamAppID= 
 
     function fetchGameList(cart) {
-        return cart.map(item => {
-            return fetch(`https://www.cheapshark.com/api/1.0/games?steamAppID=${item}`)
-        })
+        return Promise.all(cart.map(async item => {
+            const fetchAPI = await fetch(`https://www.cheapshark.com/api/1.0/games?steamAppID=${item}`)
+            const data = await fetchAPI.json()
+            return data[0]
+        }))
     }
     useEffect(() => {
-        Promise.all(fetchGameList(shoppingCart))
-            .then(reponses => {
-                reponses.map(res => res.json())
-            }).then(parsedJsonData => {
-                return setShoppingCartItems(prev => [...prev, parsedJsonData])
-            }).then(_ => setLoading(!loading))
-            .catch(err => {
-                throw err
-            })
+        fetchGameList(shoppingCart).then(responses => {
+            console.log(responses)
+            return responses
+        })
     }, [])
 
+    const displayCheckoutItems = shoppingCartItems.map(item => {
+        return (<CheckoutItems gameData={item} />)
+    })
     return (
         <div>
-            {!loading && <CheckoutItems gameData={shoppingCartItems} />}
+            {!loading && displayCheckoutItems}
         </div>
     )
 }

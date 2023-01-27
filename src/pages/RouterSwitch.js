@@ -13,8 +13,8 @@ const RouterSwitch = () => {
 				<Routes>
 					<Route path="/" element={<HomePage />} />
 					<Route path="/shop" element={<Shop />} />
-					<Route path="/checkout" element={<Checkout />} />
-					<Route path="/shop/:id" element={<ItemDetails/>}/>
+					{/* <Route path="/checkout" element={<Checkout />} /> */}
+					<Route path="/shop/:id" element={<ItemDetails />} />
 				</Routes>
 			</BrowserRouter>
 		</>

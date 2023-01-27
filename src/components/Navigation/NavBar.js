@@ -8,7 +8,7 @@ const NavBar = () => {
 	const pageLinks = [
 		{ path: "", url: "Home" },
 		{ path: "shop", url: "Shop" },
-		{ path: "checkout", url: "Checkout" },
+		// { path: "checkout", url: "Checkout" },
 	];
 
 	const DISPLAY_LINKS = pageLinks.map((pageLink) => {
@@ -23,6 +23,7 @@ const NavBar = () => {
 			<h1 className={`logo ${navStyles.logoFont}`}><Link to={'/'}>GAME DEALS</Link></h1>
 			<ul className={`nav-links ${navStyles.linksGap} ${navStyles.linksMargin} ${navStyles.linksFont} ${navStyles.linksDisplay}`}>{DISPLAY_LINKS}
 				{shoppingCart.length !== 0 && <span className={navStyles.floatItemsCart}>{shoppingCart.length}</span>}
+				<button className={navStyles.checkoutBtn} >CHECKOUT</button>
 			</ul>
 		</div>
 	);

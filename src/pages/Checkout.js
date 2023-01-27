@@ -1,5 +1,6 @@
-import React from "react";
-
+import React, { useCallback, useContext, useEffect, useState } from "react";
+import { shoppingContext } from "../app";
+import CheckoutItems from "../components/Checkout/CheckoutItems";
 
 const Checkout = () => {
     const { shoppingCart, _ } = useContext(shoppingContext)
@@ -29,7 +30,7 @@ const Checkout = () => {
         return (<CheckoutItems key={item.steamAppID} gameData={item} />)
     })
     return (
-        <div>
+        <div className="checkout-container">
             Checkout
         </div>
     )

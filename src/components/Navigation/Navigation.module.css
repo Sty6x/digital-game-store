@@ -13,6 +13,8 @@
 .linksDisplay {
 	display: flex;
 	position: relative;
+	/* justify-content: centerl; */
+	align-items: center;
 }
 
 .linksFont {
@@ -50,4 +52,13 @@
 	padding: 5px;
 	font-size: .9rem;
 	top: -40%;
+}
+
+.checkoutBtn {
+	appearance: none;
+	border: none;
+	background-color: white;
+	text-align: black;
+	padding: 5px 10px;
+	cursor: pointer;
 }

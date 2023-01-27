@@ -1,8 +1,8 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
-import { shoppingContext } from "../app";
-// import CheckoutItems from "../components/Navigation/CheckoutItems";
+import React, { useContext, useEffect, useState } from "react";
+import { shoppingContext } from "../../../app";
+import CheckoutItems from "./CheckoutItems";
 
-const Checkout = () => {
+const CheckoutSidebar = ({ sideBarRef }) => {
     const { shoppingCart, _ } = useContext(shoppingContext)
     const [shoppingCartItems, setShoppingCartItems] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -24,16 +24,18 @@ const Checkout = () => {
         }).then(_ => {
             setLoading(!loading)
         })
-    }, [])
+    }, [shoppingCart])
 
     const displayCheckoutItems = shoppingCartItems.map(item => {
-        // return (<CheckoutItems key={item.steamAppID} gameData={item} />)
+        return (<CheckoutItems key={item.steamAppID} gameData={item} />)
     })
     return (
-        <div className="checkout-container">
-            {!loading && displayCheckoutItems}
+        <div ref={sideBarRef} className="checkout-sidebar">
+            <div className="checkout-contents-container">
+                {!loading && displayCheckoutItems}
+            </div>
         </div>
     )
 }
 
-export default Checkout
+export default CheckoutSidebar 

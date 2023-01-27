@@ -99,7 +99,7 @@
 	min-height: 100vh;
 	position: absolute;
 	width: 40%;
-	background-color: red;
+	background-color: #e9ecef;
 	left: 60%;
 	top: 100%;
 	z-index: inherit;
@@ -114,7 +114,7 @@
 	min-height: 100vh;
 	transform: rotateY(180deg);
 	position: absolute;
-	background-color: red;
+	background-color: #e9ecef;
 	left: 100%;
 	top: 100%;
 	z-index: inherit;

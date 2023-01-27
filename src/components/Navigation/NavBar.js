@@ -2,6 +2,8 @@ import React, { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { shoppingContext } from "../../app";
 import navStyles from "./Navigation.module.css";
+import CheckoutSidebar from "./Checkout/CheckoutSidebar";
+
 const NavBar = () => {
 	const sideBarRef = useRef(null)
 	const { shoppingCart, _ } = useContext(shoppingContext);
@@ -21,19 +23,30 @@ const NavBar = () => {
 
 	function sideBarActivity(ref) {
 		const sideBar = ref.current
-		if (sideBar.classList.contains(navStyles.checkoutSidebarInactive)) {
-			sideBar.classList.remove(navStyles.checkoutSidebarInactive)
-			sideBar.classList.add(navStyles.checkoutSidebarActive)
+		if (sideBar.classList.contains("checkout-sidebar-inactive")) {
+			sideBar.classList.remove("checkout-sidebar-inactive")
+			sideBar.classList.add("checkout-sidebar-active")
 		}
 		else {
-			sideBar.classList.add(navStyles.checkoutSidebarInactive)
+			sideBar.classList.add("checkout-sidebar-inactive")
 			setTimeout(() => {
-				sideBar.classList.remove(navStyles.checkoutSidebarActive)
+				sideBar.classList.remove("checkout-sidebar-active")
 				console.log('done')
 			}, 155)
 		}
 		console.log(sideBar)
 	}
+
+	// function updateCheckoutItems() {
+	// 	fetchGameList(shoppingCart).then(responses => {
+	// 		console.log(responses)
+	// 		return responses
+	// 	}).then(parsedJsonData => {
+	// 		setShoppingCartItems(prev => [...prev, ...parsedJsonData])
+	// 	}).then(_ => {
+	// 		setLoading(!loading)
+	// 	})
+	// }
 
 	return (
 
@@ -47,7 +60,8 @@ const NavBar = () => {
 					}} className={navStyles.checkoutBtn} >CHECKOUT</button>
 				</ul>
 			</div>
-			<div ref={sideBarRef} className={navStyles.checkoutSidebarInactive}></div>
+			{/* <div ref={sideBarRef} className={navStyles.checkoutSidebarInactive}></div> */}
+			<CheckoutSidebar sideBarRef={sideBarRef} />
 		</div>
 	);
 };

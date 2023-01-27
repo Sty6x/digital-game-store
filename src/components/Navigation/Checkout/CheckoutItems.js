@@ -3,7 +3,7 @@ import "./checkoutItems.css"
 
 const CheckoutItems = ({ gameData }) => {
     console.log(gameData)
-    return (<> ITEM </>)
+    return (<> {gameData.external} </>)
 }
 
 export default CheckoutItems

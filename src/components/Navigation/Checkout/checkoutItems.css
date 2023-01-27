@@ -15,7 +15,7 @@
     }
 
     to {
-        left: 100%;
+        left: 200%;
     }
 }
 
@@ -37,10 +37,9 @@
 
 .checkout-sidebar-inactive {
     min-height: 100vh;
-    transform: rotateY(180deg);
     position: absolute;
     background-color: #e9ecef;
-    left: 100%;
+    left: 200%;
     top: 100%;
     z-index: inherit;
     content: "";
@@ -48,4 +47,14 @@
     animation-direction: normal;
     animation-duration: 150ms;
     animation-timing-function: ease-in-out;
+}
+
+.checkout-contents-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.checkout-contents-container>* {
+    display: block;
 }

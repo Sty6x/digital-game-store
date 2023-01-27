@@ -73,6 +73,28 @@
 	cursor: pointer;
 }
 
+@keyframes sidebarActive {
+
+	from {
+		left: 100%
+	}
+
+	to {
+		left: 60%;
+	}
+}
+
+@keyframes sidebarInactive {
+	from {
+		left: 60%
+	}
+
+	to {
+		left: 100%;
+	}
+}
+
+
 .checkoutSidebarActive {
 	min-height: 100vh;
 	position: absolute;
@@ -81,17 +103,24 @@
 	left: 60%;
 	top: 100%;
 	z-index: inherit;
-	transition: left 150ms ease-in-out;
+	animation-name: sidebarActive;
+	animation-direction: normal;
+	animation-duration: 150ms;
+	animation-timing-function: ease-in-out;
+	/* transition: left 150ms ease-in-out; */
 }
 
 .checkoutSidebarInactive {
 	min-height: 100vh;
 	transform: rotateY(180deg);
 	position: absolute;
-	/* width: 50%; */
 	background-color: red;
-	left: 100%;
+	/* left: 100%; */
 	top: 100%;
 	z-index: inherit;
 	content: "";
+	animation-name: sidebarInactive;
+	animation-direction: normal;
+	animation-duration: 150ms;
+	animation-timing-function: ease-in-out;
 }

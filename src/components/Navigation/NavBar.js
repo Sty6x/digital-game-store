@@ -20,13 +20,19 @@ const NavBar = () => {
 	});
 
 	function sideBarActivity(ref) {
-		if (ref.current.classList.contains(navStyles.checkoutSidebarInactive)) {
-			ref.current.classList.replace(`${navStyles.checkoutSidebarInactive}`, `${navStyles.checkoutSidebarActive}`)
-		} else {
-
-			ref.current.classList.replace(`${navStyles.checkoutSidebarActive}`, `${navStyles.checkoutSidebarInactive}`)
+		const sideBar = ref.current
+		if (sideBar.classList.contains(navStyles.checkoutSidebarInactive)) {
+			sideBar.classList.remove(navStyles.checkoutSidebarInactive)
+			sideBar.classList.add(navStyles.checkoutSidebarActive)
 		}
-		console.log(ref.current)
+		else if (sideBar.classList.contains(navStyles.checkoutSidebarActive)) {
+			sideBar.classList.add(navStyles.checkoutSidebarInactive)
+			setTimeout(() => {
+				sideBar.classList.remove(navStyles.checkoutSidebarActive)
+				console.log('done')
+			}, 150)
+		}
+		console.log(sideBar)
 	}
 
 	return (

@@ -6,7 +6,7 @@ import { shoppingContext } from "../../app";
 
 const ShopItems = ({ game }) => {
 
-	const { _, addToCart } = useContext(shoppingContext);
+	const shopContext = useContext(shoppingContext);
 
 	return (
 		<div className="shop-items-container">
@@ -29,7 +29,7 @@ const ShopItems = ({ game }) => {
 						BUY
 					</button>
 					<button onClick={() => {
-						addToCart(game.steamAppID)
+						shopContext.addToCart(game.steamAppID)
 					}} className="shop-items-add-btn" type="button" />
 				</div>
 			</div>

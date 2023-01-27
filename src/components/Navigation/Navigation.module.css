@@ -1,21 +1,26 @@
 .linksGap {
 	gap: 2em;
 }
+
 .linksMargin {
-    margin-left: 4em;
+	margin-left: 4em;
 }
 
-.size{
+.size {
 	height: 10%;
 }
+
 .linksDisplay {
 	display: flex;
+	position: relative;
 }
-.linksFont{
-    font-size: 1.2rem;
-    /* font-weight: bold; */
-    text-transform: uppercase;
+
+.linksFont {
+	font-size: 1.2rem;
+	/* font-weight: bold; */
+	text-transform: uppercase;
 }
+
 .navContDisplay {
 	display: flex;
 	justify-content: space-between;
@@ -24,8 +29,25 @@
 	padding: 1em 4em 1em 4em;
 	box-sizing: border-box;
 }
+
 .logoFont {
 	font-size: 3.3rem;
 	font-weight: bold;
 	color: white;
+}
+
+.floatItemsCart {
+	position: absolute;
+	color: white;
+	left: 102%;
+	background-color: red;
+	border-radius: 5px;
+	width: 10px;
+	height: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+	font-size: .9rem;
+	top: -40%;
 }

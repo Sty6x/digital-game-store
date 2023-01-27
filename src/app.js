@@ -8,7 +8,7 @@ const App = () => {
 
 	const [shoppingCart, setShoppingCart] = useState([]);
 	function addToCart(item) {
-        console.log(item, shoppingCart)
+		console.log(item, shoppingCart)
 		return setShoppingCart((prevState) => [...prevState, item]);
 	}
 

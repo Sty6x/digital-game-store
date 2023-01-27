@@ -25,6 +25,7 @@ const NavBar = () => {
 				{shoppingCart.length !== 0 && <span className={navStyles.floatItemsCart}>{shoppingCart.length}</span>}
 				<button className={navStyles.checkoutBtn} >CHECKOUT</button>
 			</ul>
+			<div className="checkout-sidebar">a</div>
 		</div>
 	);
 };

@@ -1,5 +1,6 @@
 .shop-container {
 	padding: 4em;
+	flex: 1;
 }
 
 .shop-item-list {

@@ -1,0 +1,9 @@
+.hpContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #1F2222;
+	flex: 1;
+	padding: 4em;
+}

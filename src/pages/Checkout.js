@@ -1,9 +1,8 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { shoppingContext } from "../app";
-import CheckoutItems from "../components/Checkout/CheckoutItems";
+// import CheckoutItems from "../components/Navigation/CheckoutItems";
 
 const Checkout = () => {
-
     const { shoppingCart, _ } = useContext(shoppingContext)
     const [shoppingCartItems, setShoppingCartItems] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -28,10 +27,10 @@ const Checkout = () => {
     }, [])
 
     const displayCheckoutItems = shoppingCartItems.map(item => {
-        return (<CheckoutItems key={item.steamAppID} gameData={item} />)
+        // return (<CheckoutItems key={item.steamAppID} gameData={item} />)
     })
     return (
-        <div>
+        <div className="checkout-container">
             {!loading && displayCheckoutItems}
         </div>
     )

@@ -1,0 +1,62 @@
+@keyframes sidebarActive {
+
+    from {
+        left: 100%
+    }
+
+    to {
+        left: 60%;
+    }
+}
+
+@keyframes sidebarInactive {
+    from {
+        left: 60%
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+
+.checkout-sidebar-active {
+    /* min-height: 100vh; */
+    left: 56%;
+    position: absolute;
+    animation-name: sidebarActive;
+    animation-direction: normal;
+    animation-duration: 150ms;
+    animation-timing-function: ease-in-out;
+    /* transition: left 150ms ease-in-out; */
+}
+
+.checkout-sidebar-inactive {
+    /* min-height: 100vh; */
+    left: 100%;
+    position: absolute;
+    content: "";
+    animation-name: sidebarInactive;
+    animation-direction: normal;
+    animation-duration: 150ms;
+    animation-timing-function: ease-in-out;
+}
+
+
+.checkout-contents-container {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: scroll;
+}
+
+.checkout-sidebar {
+    display: flex;
+    min-height: 90%;
+    top: 100%;
+    padding: 7em 5em;
+    width: 400px;
+    z-index: inherit;
+    background-color: #e9ecef;
+}

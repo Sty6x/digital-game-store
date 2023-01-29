@@ -13,11 +13,11 @@
 .linksDisplay {
 	display: flex;
 	position: relative;
+	align-items: center;
 }
 
 .linksFont {
 	font-size: 1.2rem;
-	/* font-weight: bold; */
 	text-transform: uppercase;
 }
 
@@ -28,6 +28,16 @@
 	background-color: #1F2222;
 	padding: 1em 4em 1em 4em;
 	box-sizing: border-box;
+	position: sticky;
+	top: 0;
+	z-index: 9;
+}
+
+.innerCont {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
 }
 
 .logoFont {
@@ -50,4 +60,13 @@
 	padding: 5px;
 	font-size: .9rem;
 	top: -40%;
+}
+
+.checkoutBtn {
+	appearance: none;
+	border: none;
+	background-color: white;
+	text-align: black;
+	padding: 5px 10px;
+	cursor: pointer;
 }

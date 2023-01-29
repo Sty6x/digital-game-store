@@ -1,8 +1,9 @@
 import React from "react";
+import "./checkoutItems.css"
 
 const CheckoutItems = ({ gameData }) => {
     console.log(gameData)
-    return (<> ITEM </>)
+    return (<div> {gameData.external} </div>)
 }
 
 export default CheckoutItems

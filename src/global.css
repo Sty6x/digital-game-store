@@ -131,6 +131,35 @@ table {
 	border-spacing: 0;
 }
 
+
+@font-face {
+	font-family: 'space-mono';
+	src: url('./assets/fonts/Space_Mono/woff/SpaceMono-Regular_1.woff') format('woff');
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'space-mono';
+	src: url('../src/assets/fonts/Space_Mono/woff/SpaceMono-BoldItalic_1.woff') format('woff');
+	font-style: italic;
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: 'space-mono';
+	src: url('../src/assets/fonts/Space_Mono/woff/SpaceMono-Italic_1.woff') format('woff');
+	font-style: italic;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'space-mono';
+	src: url('../src/assets/fonts/Space_Mono/woff/SpaceMono-Bold_1.woff') format('woff');
+	font-style: normal;
+	font-weight: 700;
+}
+
 body,
 html {
 	min-height: 100vh;

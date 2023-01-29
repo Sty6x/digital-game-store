@@ -20,31 +20,36 @@
 }
 
 .home-img-section {
-	width: 100%;
+	width: 70%;
 	height: 100%;
 	display: flex;
+	/* padding: 4em; */
+	justify-content: center;
+	align-items: center;
+	position: relative;
 }
 
-.home-img-container {
-	flex-grow: 1;
+.home-img-container::after {
+	box-shadow: inset 0px 0px 140px 200px rgb(31, 35, 35);
+	content: "";
+	top: 0;
 	width: 100%;
 	height: 100%;
-	position: relative;
+	display: block;
+	position: absolute;
+}
+
+
+
+.home-img-container {
+	width: 100%;
+	height: 120%;
+	position: absolute;
+	left: 10%;
 }
 
 .home-img {
 	width: 100%;
 	height: 100%;
 	object-fit: fill;
-}
-
-.home-img-container::after {
-	box-shadow: inset 0px 0px 10px 6px rgb(31, 35, 35);
-	content: "";
-	width: 100%;
-	height: 100%;
-	top: 0;
-	display: block;
-	position: absolute;
-	/* z-index: 11; */
 }

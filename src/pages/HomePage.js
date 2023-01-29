@@ -6,7 +6,7 @@ function HomePage() {
 	return (
 		<div className="hpContainer">
 			<div className="home-introduction-section">
-				<p className="home-intro-p"> Mollit minim anim officia nulla aliqua ad minim. Deserunt amet id laboris fugiat ut velit.</p>
+				<p className="home-intro-p">Game Deals is the best place to find the best discounts on the most popular video games.</p>
 				<button type="button"><Link to="/shop" >Shop now</Link></button>
 			</div>
 			<div className="home-img-section">

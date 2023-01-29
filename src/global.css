@@ -140,21 +140,21 @@ table {
 }
 
 @font-face {
-	font-family: 'space-mono';
+	font-family: 'space-mono-boldItalic';
 	src: url('../src/assets/fonts/Space_Mono/woff/SpaceMono-BoldItalic_1.woff') format('woff');
 	font-style: italic;
 	font-weight: 700;
 }
 
 @font-face {
-	font-family: 'space-mono';
+	font-family: 'space-mono-italic';
 	src: url('../src/assets/fonts/Space_Mono/woff/SpaceMono-Italic_1.woff') format('woff');
 	font-style: italic;
 	font-weight: 400;
 }
 
 @font-face {
-	font-family: 'space-mono';
+	font-family: 'space-mono-bold';
 	src: url('../src/assets/fonts/Space_Mono/woff/SpaceMono-Bold_1.woff') format('woff');
 	font-style: normal;
 	font-weight: 700;
@@ -164,6 +164,7 @@ body,
 html {
 	min-height: 100vh;
 	overflow-x: clip;
+	font-family: "space-mono";
 }
 
 #root {
@@ -176,19 +177,18 @@ html {
 
 a:visited {
 	text-decoration: none;
+	color: black;
 }
 
 a:link {
 	text-decoration: none;
+	color: black;
 }
 
 a:active {
 	text-decoration: none;
 }
 
-a:hover {
-	color: orange;
-}
 
 li {
 	list-style: none;
@@ -204,4 +204,8 @@ li {
 
 body:has(.hpContainer) {
 	overflow-y: hidden;
+}
+
+button[type="button"] {
+	border-radius: 10px;
 }

@@ -16,14 +16,25 @@
 .home-intro-p {
 	font-size: 3rem;
 	color: white;
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 	display: block;
 }
 
 
 .home-toshop-btn {
 	border: none;
+	font-family: "space-mono";
 	appearance: none;
+	padding: 10px 20px;
+	font-size: 1.2rem;
+	background-color: white;
+	font-weight: 700;
+	transition: background-color 150ms ease-in;
+	border-radius: 10px;
+}
+
+.home-toshop-btn:hover {
+	background-color: #ffc235;
 }
 
 .home-img-section {

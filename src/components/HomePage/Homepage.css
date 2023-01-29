@@ -1,9 +1,50 @@
 .hpContainer {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: #1F2222;
+	background-color: rgb(31, 35, 35);
 	flex: 1;
 	padding: 4em;
+}
+
+
+.home-introduction-section {
+	width: 30%;
+}
+
+
+
+.home-intro-p {
+	font-size: 3rem;
+	color: white;
+}
+
+.home-img-section {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+.home-img-container {
+	flex-grow: 1;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.home-img {
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
+.home-img-container::after {
+	box-shadow: inset 0px 0px 10px 6px rgb(31, 35, 35);
+	content: "";
+	width: 100%;
+	height: 100%;
+	top: 0;
+	display: block;
+	position: absolute;
+	/* z-index: 11; */
 }

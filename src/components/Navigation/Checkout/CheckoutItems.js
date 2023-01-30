@@ -2,7 +2,6 @@ import React from "react";
 import "./checkoutItems.css"
 
 const CheckoutItems = ({ gameData }) => {
-    console.log(gameData)
     return (
         <div className="checkout-item-container">
             <div className="checkout-item-img-section">

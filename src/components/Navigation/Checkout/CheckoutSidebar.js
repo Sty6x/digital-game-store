@@ -3,14 +3,13 @@ import { shoppingContext } from "../../../app";
 import CheckoutItems from "./CheckoutItems";
 import "./checkout.css"
 
-const CheckoutSidebar = ({ sideBarRef, shoppingCartItems }) => {
+const CheckoutSidebar = ({ totalPrice, sideBarRef, shoppingCartItems }) => {
     const { shoppingCart, _ } = useContext(shoppingContext)
 
 
     const displayCheckoutItems = (shoppingCart.length !== 0) ? shoppingCartItems.map(item => {
         return (<CheckoutItems key={item.steamAppID} gameData={item} />)
     }) : <>Shopping cart is empty</>
-
 
     return (
         <div ref={sideBarRef} className="checkout-sidebar-inactive checkout-sidebar">
@@ -19,8 +18,8 @@ const CheckoutSidebar = ({ sideBarRef, shoppingCartItems }) => {
                 {displayCheckoutItems}
             </div>
             <div className="checkout-btn-price">
-                <button class="checkout-btn" type="button">Checkout</button>
-                <p className="total-price">Total price: $160.90</p>
+                <button className="checkout-btn" type="button">Checkout</button>
+                <p className="total-price">Total price: {totalPrice}</p>
             </div>
         </div>
     )

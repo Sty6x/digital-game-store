@@ -211,3 +211,7 @@ body:has(.hpContainer) {
 button[type="button"] {
 	border-radius: 10px;
 }
+
+button {
+	cursor: pointer;
+}

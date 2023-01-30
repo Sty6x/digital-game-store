@@ -14,13 +14,14 @@ const NavBar = () => {
 		// { path: "checkout", url: "Checkout" },
 	];
 
+	const [totalPrice, setTotalPrice] = useState(0);
 	const [shoppingCartItems, setShoppingCartItems] = useState([]);
 	const [loading, setLoading] = useState(true);
 
 	const DISPLAY_LINKS = pageLinks.map((pageLink) => {
 		return (
 			<li className="links" key={pageLink.url}>
-				<Link to={`/${pageLink.path}`}>{pageLink.url}</Link>{" "}
+				<Link to={`/${pageLink.path}`}>{pageLink.url}</Link>
 			</li>
 		);
 	});
@@ -51,13 +52,23 @@ const NavBar = () => {
 
 	function updateCheckoutItems() {
 		fetchGameList(shoppingCart).then(responses => {
-			console.log(responses)
 			return responses
 		}).then(parsedJsonData => {
 			setShoppingCartItems(prev => parsedJsonData)
 		}).then(_ => {
 			setLoading(!loading)
+		}).then(_ => {
+			getTotalPrice(shoppingCartItems)
 		})
+	}
+
+	function getTotalPrice(cart) {
+		console.log(totalPrice)
+		for (const item of cart) {
+			setTotalPrice(prev => {
+				return prev + item.cheapest
+			})
+		}
 	}
 
 	useEffect(() => {
@@ -78,7 +89,7 @@ const NavBar = () => {
 					}} className={navStyles.checkoutBtn} >CHECKOUT</button>
 				</ul>
 			</div>
-			<CheckoutSidebar sideBarRef={sideBarRef} shoppingCartItems={shoppingCartItems} />
+			<CheckoutSidebar sideBarRef={sideBarRef} totalPrice={totalPrice} shoppingCartItems={shoppingCartItems} />
 		</div>
 	);
 };

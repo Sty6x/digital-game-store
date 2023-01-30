@@ -18,6 +18,10 @@ const CheckoutSidebar = ({ sideBarRef, shoppingCartItems }) => {
             <div className="checkout-contents-container">
                 {displayCheckoutItems}
             </div>
+            <div className="checkout-btn-price">
+                <button class="checkout-btn" type="button">Checkout</button>
+                <p className="total-price">Total price: $160.90</p>
+            </div>
         </div>
     )
 }

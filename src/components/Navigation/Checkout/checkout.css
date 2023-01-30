@@ -89,3 +89,14 @@
     left: 43%;
     background-position: bottom;
 }
+
+.checkout-btn {
+    width: fit-content;
+    padding: 1em 3em;
+}
+
+.checkout-btn-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

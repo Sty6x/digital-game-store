@@ -1,11 +1,12 @@
-import React, { useState, useContext, useEffect, useRef, useCallback } from "react";
+import React, { useState, useContext, useEffect, useRef, useCallback, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { shoppingContext } from "../../app";
 import navStyles from "./Navigation.module.css";
 import CheckoutSidebar from "./Checkout/CheckoutSidebar";
-
+import { usePrevious } from "../../hooks/usePrevious";
 
 const NavBar = () => {
+
 	const sideBarRef = useRef()
 	const { shoppingCart, _ } = useContext(shoppingContext);
 	const pageLinks = [
@@ -17,6 +18,8 @@ const NavBar = () => {
 	const [totalPrice, setTotalPrice] = useState(0);
 	const [shoppingCartItems, setShoppingCartItems] = useState([]);
 	const [loading, setLoading] = useState(true);
+	let [isActive, setIsActive] = useState(false);
+	const prevCartItems = usePrevious(shoppingCartItems)
 
 	const DISPLAY_LINKS = pageLinks.map((pageLink) => {
 		return (
@@ -29,17 +32,18 @@ const NavBar = () => {
 	function sideBarActivity(ref) {
 		const sideBar = ref.current
 		if (sideBar.classList.contains("checkout-sidebar-inactive")) {
+			setIsActive(isActive = true)
 			sideBar.classList.add("checkout-sidebar-active")
 			sideBar.classList.remove("checkout-sidebar-inactive")
 		}
 		else {
+			setIsActive(!isActive)
 			sideBar.classList.add("checkout-sidebar-inactive")
 			setTimeout(() => {
 				sideBar.classList.remove("checkout-sidebar-active")
 				console.log('done')
 			}, 155)
 		}
-		console.log(sideBar)
 	}
 
 	function fetchGameList(cart) {
@@ -64,17 +68,24 @@ const NavBar = () => {
 	}
 
 	function getTotalPrice(cart) {
-		let totalPrice = 0;
-		for (const item of cart) {
-			totalPrice = Number(item.cheapest)
+		console.log(prevCartItems)
+		if (prevCartItems.length !== shoppingCartItems.length) {
+
+			let price = 0;
+			for (const item of cart) {
+				price += Number(item.cheapest)
+			}
+			setTotalPrice(prev => prev + price)
 		}
-		return setTotalPrice(prev => prev + totalPrice)
 	}
 
 
 	useEffect(() => {
-		getTotalPrice(shoppingCartItems)
-	}, [shoppingCartItems])
+		if (isActive) {
+			console.log('yes')
+			getTotalPrice(shoppingCartItems)
+		}
+	}, [isActive, shoppingCartItems])
 
 	useEffect(() => {
 		fetchGameList(shoppingCart)

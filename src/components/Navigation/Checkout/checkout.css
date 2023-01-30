@@ -5,13 +5,13 @@
     }
 
     to {
-        left: 60%;
+        left: 70%;
     }
 }
 
 @keyframes sidebarInactive {
     from {
-        left: 60%
+        left: 70%
     }
 
     to {
@@ -21,19 +21,15 @@
 
 
 .checkout-sidebar-active {
-    left: 56%;
-    position: absolute;
+    left: 70%;
     animation-name: sidebarActive;
     animation-direction: normal;
     animation-duration: 150ms;
     animation-timing-function: ease-in-out;
-    transition: left 150ms ease-in-out;
 }
 
 .checkout-sidebar-inactive {
     left: 100%;
-    position: absolute;
-    content: "";
     animation-name: sidebarInactive;
     animation-direction: normal;
     animation-duration: 150ms;
@@ -51,8 +47,9 @@
 .checkout-sidebar {
     display: flex;
     top: 100%;
-    flex: 1;
     padding: 7em 5em;
+    position: absolute;
+    min-height: max-content;
     width: 400px;
     z-index: inherit;
     background-color: #e9ecef;

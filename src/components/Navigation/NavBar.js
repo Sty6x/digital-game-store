@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, useRef } from "react";
+import React, { useState, useContext, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { shoppingContext } from "../../app";
 import navStyles from "./Navigation.module.css";
@@ -57,16 +57,21 @@ const NavBar = () => {
 			setShoppingCartItems(prev => parsedJsonData)
 		}).then(_ => {
 			setLoading(!loading)
+		}).then(() => {
+			console.log("shopping cart updated")
+			console.log(shoppingCartItems)
 		})
 	}
 
 	function getTotalPrice(cart) {
-		console.log(totalPrice)
+		let totalPrice = 0;
 		for (const item of cart) {
-			const itemPrice = Number(item.cheapest)
-			setTotalPrice(prev => prev + itemPrice)
+			totalPrice = Number(item.cheapest)
 		}
+		return setTotalPrice(prev => prev + totalPrice)
 	}
+
+
 	useEffect(() => {
 		getTotalPrice(shoppingCartItems)
 	}, [shoppingCartItems])

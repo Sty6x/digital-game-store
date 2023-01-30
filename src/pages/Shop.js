@@ -11,7 +11,6 @@ const Shop = () => {
 				mode: "cors",
 			});
 			const GAMES = await FETCHED_GAME_LIST.json();
-			console.log(GAMES);
 			setGames([...GAMES]);
 			setLoading(!loading);
 		} catch (err) {

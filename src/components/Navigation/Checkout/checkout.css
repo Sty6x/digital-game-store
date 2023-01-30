@@ -1,5 +1,5 @@
 :root {
-    --sideBar-width: 800px;
+    --sideBar-width: 600px;
 
 }
 
@@ -16,11 +16,7 @@
 
 @keyframes sidebarInactive {
     from {
-
-
         left: calc(95% - var(--sideBar-width));
-
-
     }
 
     to {
@@ -58,7 +54,8 @@
 .checkout-sidebar {
     display: flex;
     top: 100%;
-    padding: 7em 3em;
+    padding: 4em 3em;
+    height: 100vh;
     position: absolute;
     min-height: max-content;
     width: var(--sideBar-width);

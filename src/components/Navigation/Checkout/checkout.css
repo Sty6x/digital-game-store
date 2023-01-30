@@ -1,3 +1,8 @@
+:root {
+    --sideBar-width: 800px;
+
+}
+
 @keyframes sidebarActive {
 
     from {
@@ -5,13 +10,17 @@
     }
 
     to {
-        left: 70%;
+        left: calc(95% - var(--sideBar-width));
     }
 }
 
 @keyframes sidebarInactive {
     from {
-        left: 70%
+
+
+        left: calc(95% - var(--sideBar-width));
+
+
     }
 
     to {
@@ -20,8 +29,9 @@
 }
 
 
+
 .checkout-sidebar-active {
-    left: 70%;
+    left: calc(95% - var(--sideBar-width));
     animation-name: sidebarActive;
     animation-direction: normal;
     animation-duration: 150ms;
@@ -42,15 +52,16 @@
     justify-content: start;
     flex-direction: column;
     overflow-y: scroll;
+    flex: 1;
 }
 
 .checkout-sidebar {
     display: flex;
     top: 100%;
-    padding: 7em 5em;
+    padding: 7em 3em;
     position: absolute;
     min-height: max-content;
-    width: 400px;
-    z-index: inherit;
+    width: var(--sideBar-width);
+    z-index: 9;
     background-color: #e9ecef;
 }

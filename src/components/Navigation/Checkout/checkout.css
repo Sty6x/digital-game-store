@@ -50,12 +50,14 @@
     overflow-y: scroll;
     flex: 1;
     gap: 20px;
+    position: relative;
 }
 
 .checkout-sidebar {
     display: flex;
     top: 100%;
     padding: 4em 4em;
+    height: 860px;
     flex-direction: column;
     position: absolute;
     min-height: max-content;

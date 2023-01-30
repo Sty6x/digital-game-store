@@ -1,0 +1,35 @@
+.checkout-item-container {
+    display: flex;
+    flex: 1;
+}
+
+.checkout-item-title {
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.checkout-item-descAndoptions-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.delete-item {
+    width: fit-content;
+
+}
+
+.checkout-item-img-section {
+    margin-right: 20px;
+}
+
+.checkout-item-img-container {
+    height: 100%;
+}
+
+.checkout-item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}

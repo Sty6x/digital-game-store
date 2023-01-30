@@ -49,6 +49,7 @@
     flex-direction: column;
     overflow-y: scroll;
     flex: 1;
+    gap: 20px;
 }
 
 .checkout-sidebar {

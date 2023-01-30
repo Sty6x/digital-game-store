@@ -2,8 +2,10 @@ import React from "react";
 import "./checkoutItems.css"
 
 const CheckoutItems = ({ gameData }) => {
-    console.log(gameData)
-    return (<div> {gameData.external} </div>)
+
+    return (<div className="checkout-items-container">
+        {gameData.external}
+    </div>)
 }
 
 export default CheckoutItems

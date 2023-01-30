@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { shoppingContext } from "../../../app";
 import CheckoutItems from "./CheckoutItems";
+import "./checkout.css"
 
 const CheckoutSidebar = ({ sideBarRef, shoppingCartItems }) => {
     const { shoppingCart, _ } = useContext(shoppingContext)
 
-    // https://www.cheapshark.com/api/1.0/games?steamAppID= 
 
     const displayCheckoutItems = (shoppingCart.length !== 0) ? shoppingCartItems.map(item => {
         return (<CheckoutItems key={item.steamAppID} gameData={item} />)

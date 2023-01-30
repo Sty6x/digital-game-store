@@ -57,19 +57,19 @@ const NavBar = () => {
 			setShoppingCartItems(prev => parsedJsonData)
 		}).then(_ => {
 			setLoading(!loading)
-		}).then(_ => {
-			getTotalPrice(shoppingCartItems)
 		})
 	}
 
 	function getTotalPrice(cart) {
 		console.log(totalPrice)
 		for (const item of cart) {
-			setTotalPrice(prev => {
-				return prev + item.cheapest
-			})
+			const itemPrice = Number(item.cheapest)
+			setTotalPrice(prev => prev + itemPrice)
 		}
 	}
+	useEffect(() => {
+		getTotalPrice(shoppingCartItems)
+	}, [shoppingCartItems])
 
 	useEffect(() => {
 		fetchGameList(shoppingCart)
@@ -84,8 +84,8 @@ const NavBar = () => {
 				<ul className={`nav-links ${navStyles.linksGap} ${navStyles.linksMargin} ${navStyles.linksFont} ${navStyles.linksDisplay}`}>{DISPLAY_LINKS}
 					{shoppingCart.length !== 0 && <span className={navStyles.floatItemsCart}>{shoppingCart.length}</span>}
 					<button onClick={() => {
-						sideBarActivity(sideBarRef)
 						updateCheckoutItems()
+						sideBarActivity(sideBarRef)
 					}} className={navStyles.checkoutBtn} >CHECKOUT</button>
 				</ul>
 			</div>

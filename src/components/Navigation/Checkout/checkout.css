@@ -54,11 +54,35 @@
 .checkout-sidebar {
     display: flex;
     top: 100%;
-    padding: 4em 3em;
-    height: 100vh;
+    padding: 4em 4em;
+    flex-direction: column;
     position: absolute;
     min-height: max-content;
     width: var(--sideBar-width);
     z-index: 9;
     background-color: #e9ecef;
+    box-sizing: content-box;
+    gap: 30px;
+}
+
+.checkout-header {
+    font-size: 2rem;
+    display: block;
+    position: relative;
+}
+
+.checkout-header::after {
+    --checkout-icon-size-w: 25px;
+    --checkout-icon-size-h: 25px;
+    display: block;
+    position: absolute;
+    content: "";
+    background-image: url("../../../assets/img/cart-checkout.png");
+    background-repeat: no-repeat;
+    background-size: var(--checkout-icon-size-w) var(--checkout-icon-size-h);
+    width: var(--checkout-icon-size-w);
+    height: var(--checkout-icon-size-h);
+    top: 18%;
+    left: 43%;
+    background-position: bottom;
 }

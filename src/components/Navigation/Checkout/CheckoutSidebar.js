@@ -14,6 +14,7 @@ const CheckoutSidebar = ({ sideBarRef, shoppingCartItems }) => {
 
     return (
         <div ref={sideBarRef} className="checkout-sidebar-inactive checkout-sidebar">
+            <h1 className="checkout-header">Shopping cart</h1>
             <div className="checkout-contents-container">
                 {displayCheckoutItems}
             </div>

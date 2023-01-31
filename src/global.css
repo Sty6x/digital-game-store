@@ -235,7 +235,8 @@ body::-webkit-scrollbar-thumb {
 
 .foreground {
 	position: absolute;
-	background-color: rgb(0, 0, 0, .4);
+	background-color: #1F2222;
+	opacity: .4;
 	height: 100%;
 	width: 100%;
 }

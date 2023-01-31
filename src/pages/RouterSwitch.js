@@ -5,11 +5,15 @@ import Checkout from "./Checkout";
 import HomePage from "./HomePage";
 import Shop from "./Shop";
 import ItemDetails from "./ItemDetails";
+import { useRef } from "react";
 const RouterSwitch = () => {
+
+	const foregroundRef = useRef()
 	return (
 		<>
 			<BrowserRouter>
-				<NavBar />
+				<div ref={foregroundRef} className="foreground"></div>
+				<NavBar foregroundRef={foregroundRef} />
 				<Routes>
 					<Route path="/" element={<HomePage />} />
 					<Route path="/shop" element={<Shop />} />

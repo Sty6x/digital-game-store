@@ -5,7 +5,7 @@ import navStyles from "./Navigation.module.css";
 import CheckoutSidebar from "./Checkout/CheckoutSidebar";
 import { usePrevious } from "../../hooks/usePrevious";
 
-const NavBar = () => {
+const NavBar = ({ foregroundRef }) => {
 
 	const sideBarRef = useRef()
 	const { shoppingCart, _ } = useContext(shoppingContext);
@@ -31,6 +31,7 @@ const NavBar = () => {
 	});
 
 	function sideBarActivity(ref) {
+		console.log(foregroundRef.current)
 		const sideBar = ref.current
 		if (sideBar.classList.contains("checkout-sidebar-inactive")) {
 			setIsActive(isActive = true)

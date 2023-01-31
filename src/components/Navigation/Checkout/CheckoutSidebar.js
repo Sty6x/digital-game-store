@@ -18,7 +18,7 @@ const CheckoutSidebar = ({ totalPrice, sideBarRef, shoppingCartItems }) => {
                 {displayCheckoutItems}
             </div>
             <div className="checkout-btn-price">
-                <button className="checkout-btn" type="button"><a href="/">Checkout</a></button>
+                <button className="checkout-btn" type="button"><a href="/digital-game-store">Checkout</a></button>
                 <p className="total-price">Total price: ${Math.round(totalPrice * 100) / 100}</p>
             </div>
         </div>

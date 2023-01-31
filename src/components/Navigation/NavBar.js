@@ -10,7 +10,7 @@ const NavBar = ({ foregroundRef }) => {
 	const sideBarRef = useRef()
 	const { shoppingCart, _ } = useContext(shoppingContext);
 	const pageLinks = [
-		{ path: "", url: "Home" },
+		{ path: "digital-game-store", url: "Home" },
 		{ path: "shop", url: "Shop" },
 		// { path: "checkout", url: "Checkout" },
 	];
@@ -93,7 +93,7 @@ const NavBar = ({ foregroundRef }) => {
 	return (
 		<div className={`nav-container ${navStyles.size} ${navStyles.navContDisplay}`}>
 			<div className={navStyles.innerCont}>
-				<h1 className={`logo ${navStyles.logoFont}`}><Link to={'/'}>GAME DEALS</Link></h1>
+				<h1 className={`logo ${navStyles.logoFont}`}><Link to={'/digital-game-store'}>GAME DEALS</Link></h1>
 				<ul className={`nav-links ${navStyles.linksGap} ${navStyles.linksMargin} ${navStyles.linksFont} ${navStyles.linksDisplay}`}>{DISPLAY_LINKS}
 					{shoppingCart.length !== 0 && <span className={navStyles.floatItemsCart}>{shoppingCart.length}</span>}
 					<button onClick={() => {

@@ -51,6 +51,8 @@
     flex: 1;
     gap: 20px;
     position: relative;
+    padding: .5em 1em;
+    border: rgba(205, 205, 205, 0.4) 5px solid;
 }
 
 .checkout-sidebar {

@@ -94,10 +94,10 @@ const NavBar = () => {
 				<ul className={`nav-links ${navStyles.linksGap} ${navStyles.linksMargin} ${navStyles.linksFont} ${navStyles.linksDisplay}`}>{DISPLAY_LINKS}
 					{shoppingCart.length !== 0 && <span className={navStyles.floatItemsCart}>{shoppingCart.length}</span>}
 					<button onClick={() => {
+						sideBarActivity(sideBarRef)
 						if (prevCart.length !== shoppingCart.length) {
 							updateCheckoutItems()
 						}
-						sideBarActivity(sideBarRef)
 					}} className={navStyles.checkoutBtn} >CHECKOUT</button>
 				</ul>
 			</div>

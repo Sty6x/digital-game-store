@@ -9,7 +9,7 @@ const CheckoutSidebar = ({ totalPrice, sideBarRef, shoppingCartItems }) => {
 
     const displayCheckoutItems = (shoppingCart.length !== 0) ? shoppingCartItems.map(item => {
         return (<CheckoutItems key={item.steamAppID} gameData={item} />)
-    }) : <>Shopping cart is empty</>
+    }) : <>Shopping cart is empty...</>
 
     return (
         <div ref={sideBarRef} className="checkout-sidebar-inactive checkout-sidebar">

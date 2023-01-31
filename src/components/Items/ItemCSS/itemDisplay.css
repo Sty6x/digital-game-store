@@ -8,7 +8,7 @@
 }
 
 .item-display-img-container {
-	width: 70%;
+	width: 60%;
 }
 
 .item-display-img-container>img {
@@ -118,10 +118,6 @@
 
 .item-display-floating-sale {
 	position: absolute;
-	/* left: -5px; */
-	left: 60%;
-	/* top: 20px; */
-	position: absolute;
 	background-color: #1b9045;
 	width: 130px;
 	height: 80px;
@@ -129,8 +125,6 @@
 	justify-content: center;
 	align-items: center;
 	padding: 3px 5px;
-	/* border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px; */
 	font-weight: bold;
 	box-shadow: inset -1px 0 10px rgba(0, 0, 0, 0.7);
 	padding: 5px 10px;

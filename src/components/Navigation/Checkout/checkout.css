@@ -90,6 +90,17 @@
     background-position: bottom;
 }
 
+.checkout-header::before {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 125%;
+    /* left: 43%; */
+    width: 100%;
+    height: 5px;
+    background-color: rgb(31, 34, 34, .2);
+}
+
 .checkout-btn {
     width: fit-content;
     padding: 1em 3em;

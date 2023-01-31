@@ -54,16 +54,12 @@ const NavBar = () => {
 		}))
 	}
 
+
 	function updateCheckoutItems() {
 		fetchGameList(shoppingCart).then(responses => {
 			return responses
 		}).then(parsedJsonData => {
 			setShoppingCartItems(prev => parsedJsonData)
-		}).then(_ => {
-			setLoading(!loading)
-		}).then(() => {
-			console.log("shopping cart updated")
-			console.log(shoppingCartItems)
 		})
 	}
 
@@ -81,7 +77,6 @@ const NavBar = () => {
 
 	useEffect(() => {
 		if (isActive) {
-			console.log('yes')
 			getTotalPrice(shoppingCartItems)
 		}
 	}, [isActive, shoppingCartItems])
@@ -89,8 +84,6 @@ const NavBar = () => {
 	useEffect(() => {
 		fetchGameList(shoppingCart)
 	}, [shoppingCart])
-
-
 
 	return (
 		<div className={`nav-container ${navStyles.size} ${navStyles.navContDisplay}`}>

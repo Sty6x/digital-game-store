@@ -20,6 +20,7 @@ const NavBar = () => {
 	const [loading, setLoading] = useState(true);
 	let [isActive, setIsActive] = useState(false);
 	const prevCartItems = usePrevious(shoppingCartItems)
+	const prevCart = usePrevious(shoppingCart)
 
 	const DISPLAY_LINKS = pageLinks.map((pageLink) => {
 		return (
@@ -56,10 +57,11 @@ const NavBar = () => {
 
 
 	function updateCheckoutItems() {
+		console.log('updated')
 		fetchGameList(shoppingCart).then(responses => {
 			return responses
 		}).then(parsedJsonData => {
-			setShoppingCartItems(prev => parsedJsonData)
+			setShoppingCartItems(prev => [...prev, ...parsedJsonData])
 		})
 	}
 
@@ -92,7 +94,9 @@ const NavBar = () => {
 				<ul className={`nav-links ${navStyles.linksGap} ${navStyles.linksMargin} ${navStyles.linksFont} ${navStyles.linksDisplay}`}>{DISPLAY_LINKS}
 					{shoppingCart.length !== 0 && <span className={navStyles.floatItemsCart}>{shoppingCart.length}</span>}
 					<button onClick={() => {
-						updateCheckoutItems()
+						if (prevCart.length !== shoppingCart.length) {
+							updateCheckoutItems()
+						}
 						sideBarActivity(sideBarRef)
 					}} className={navStyles.checkoutBtn} >CHECKOUT</button>
 				</ul>

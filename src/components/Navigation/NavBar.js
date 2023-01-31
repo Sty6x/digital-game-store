@@ -79,7 +79,6 @@ const NavBar = () => {
 		}
 	}
 
-
 	useEffect(() => {
 		if (isActive) {
 			console.log('yes')

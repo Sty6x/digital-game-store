@@ -123,9 +123,14 @@
 .checkout-btn {
     width: fit-content;
     padding: 1em 3em;
+    font-weight: bold;
+    background-color: #67d463;
+    border: #1F2222 solid 2px;
+    text-transform: uppercase;
 }
 
 .checkout-btn-price {
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: space-between;

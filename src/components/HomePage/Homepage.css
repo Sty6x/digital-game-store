@@ -27,13 +27,13 @@
 	appearance: none;
 	padding: 10px 20px;
 	font-size: 1.2rem;
-	background-color: white;
 	font-weight: 700;
+	background-color: #ffc235;
 	transition: background-color 150ms ease-in;
 }
 
 .home-toshop-btn:hover {
-	background-color: #ffc235;
+	background-color: white;
 }
 
 .home-img-section {

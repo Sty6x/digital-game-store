@@ -200,6 +200,19 @@ li {
 	color: white;
 }
 
+
+.links>a:link {
+	color: white;
+}
+
+.links>a:visited {
+	color: white;
+}
+
+.links>a:active {
+	color: white;
+}
+
 .logo>a:visited {
 	color: white;
 }

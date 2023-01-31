@@ -15,7 +15,7 @@ const CheckoutItems = ({ gameData }) => {
             </div>
             <div className="checkout-item-price-section">
                 <p>Price:</p>
-                {gameData.cheapest}
+                ${gameData.cheapest}
             </div>
         </div>)
 }

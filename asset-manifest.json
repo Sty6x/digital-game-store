@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/digital-game-store/static/css/main.24b567bf.css",
-    "main.js": "/digital-game-store/static/js/main.aafefb5d.js",
+    "main.js": "/digital-game-store/static/js/main.991d9491.js",
     "static/media/flatHomeImg(1).jpg": "/digital-game-store/static/media/flatHomeImg(1).2be4d14d52a6efe424c2.jpg",
     "static/media/SpaceMono-Italic_1.woff": "/digital-game-store/static/media/SpaceMono-Italic_1.b9c0f01febc7763ee20b.woff",
     "static/media/SpaceMono-BoldItalic_1.woff": "/digital-game-store/static/media/SpaceMono-BoldItalic_1.0a0c48fff83bcc471735.woff",
@@ -9,10 +9,10 @@
     "static/media/SpaceMono-Bold_1.woff": "/digital-game-store/static/media/SpaceMono-Bold_1.9832c0ced30554add704.woff",
     "index.html": "/digital-game-store/index.html",
     "main.24b567bf.css.map": "/digital-game-store/static/css/main.24b567bf.css.map",
-    "main.aafefb5d.js.map": "/digital-game-store/static/js/main.aafefb5d.js.map"
+    "main.991d9491.js.map": "/digital-game-store/static/js/main.991d9491.js.map"
   },
   "entrypoints": [
     "static/css/main.24b567bf.css",
-    "static/js/main.aafefb5d.js"
+    "static/js/main.991d9491.js"
   ]
 }

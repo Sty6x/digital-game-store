@@ -165,14 +165,16 @@ html {
 	min-height: 100vh;
 	overflow-x: clip;
 	font-family: "space-mono";
+	display: flex;
+	flex-direction: column;
 }
 
 #root {
-	height: 100vh;
-	width: 100%;
-	position: relative;
 	display: flex;
 	flex-direction: column;
+	/* min-height: inherit; */
+	flex: 1;
+	position: relative;
 }
 
 a:visited {
@@ -208,4 +210,37 @@ body:has(.hpContainer) {
 
 button[type="button"] {
 	border-radius: 10px;
+}
+
+button {
+	cursor: pointer;
+}
+
+body::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+	background-color: #383d3d;
+}
+
+.foreground {
+	position: absolute;
+	background-color: #1F2222;
+	opacity: .4;
+	height: 100%;
+	width: 100%;
+}
+
+.foreground-inactive {
+	top: 100%;
 }

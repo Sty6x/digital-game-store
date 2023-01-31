@@ -30,7 +30,6 @@
 	background-color: white;
 	font-weight: 700;
 	transition: background-color 150ms ease-in;
-	border-radius: 10px;
 }
 
 .home-toshop-btn:hover {
@@ -39,7 +38,7 @@
 
 .home-img-section {
 	width: 70%;
-	height: 100%;
+	height: 800px;
 	display: flex;
 	justify-content: center;
 	align-items: center;

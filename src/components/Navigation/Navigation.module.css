@@ -65,10 +65,12 @@
 .checkoutBtn {
 	appearance: none;
 	border: none;
-	background-color: rgb(0, 0, 0, 0);
-	color: white;
+	background-color: white;
 	padding: 5px 10px;
-	cursor: pointer;
-	font-family: "space-mono";
-	font-size: 1.2rem;
+	border-radius: 5px;
+	transition: background-color 150ms ease-in-out;
+}
+
+.checkoutBtn:hover {
+	background-color: #f7c03e;
 }

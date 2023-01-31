@@ -204,6 +204,7 @@ li {
 	color: white;
 }
 
+html:has(.hpContainer),
 body:has(.hpContainer) {
 	overflow-y: hidden;
 }
@@ -239,8 +240,4 @@ body::-webkit-scrollbar-thumb {
 	opacity: .4;
 	height: 100%;
 	width: 100%;
-}
-
-.foreground-inactive {
-	top: 100%;
 }

@@ -12,7 +12,7 @@ const RouterSwitch = () => {
 	return (
 		<>
 			<BrowserRouter>
-				<div ref={foregroundRef} className="foreground"></div>
+				<div ref={foregroundRef} ></div>
 				<NavBar foregroundRef={foregroundRef} />
 				<Routes>
 					<Route path="/" element={<HomePage />} />

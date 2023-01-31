@@ -31,14 +31,16 @@ const NavBar = ({ foregroundRef }) => {
 	});
 
 	function sideBarActivity(ref) {
-		console.log(foregroundRef.current)
 		const sideBar = ref.current
+		const fg = foregroundRef.current
 		if (sideBar.classList.contains("checkout-sidebar-inactive")) {
 			setIsActive(isActive = true)
+			fg.classList.add("foreground")
 			sideBar.classList.add("checkout-sidebar-active")
 			sideBar.classList.remove("checkout-sidebar-inactive")
 		}
 		else {
+			fg.classList.remove("foreground")
 			setIsActive(!isActive)
 			sideBar.classList.add("checkout-sidebar-inactive")
 			setTimeout(() => {

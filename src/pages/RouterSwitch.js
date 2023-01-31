@@ -15,7 +15,7 @@ const RouterSwitch = () => {
 				<div ref={foregroundRef} ></div>
 				<NavBar foregroundRef={foregroundRef} />
 				<Routes>
-					<Route path="/" element={<HomePage />} />
+					<Route path="/digital-game-store" element={<HomePage />} />
 					<Route path="/shop" element={<Shop />} />
 					<Route path="/shop/:id" element={<ItemDetails />} />
 				</Routes>

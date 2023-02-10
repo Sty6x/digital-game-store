@@ -2,7 +2,7 @@
 
 A digital game store using Client side Routing from React Routers and Cheap Shark API to fetch their websites data so i don't have to use any assets
 
-This is my second project using ReactJS. The Purpose of this project is for me to get more familiar with React Routers and using the useEffect hook to fetch data for a component and using multiple APIS.
+This is my second project using ReactJS. The Purpose of this project is for me to get more familiar with React Routers and using the useEffect hook to fetch data for a component while using multiple APIS.
 
 You can visit the site here:  https://sty6x.github.io/digital-game-store/
 
